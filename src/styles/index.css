@@ -46,10 +46,3 @@ h1{
 .login:hover{
     background-color: #44a0fc;
 }
-
-.world-map{
-    background-color: #ccc;
-    padding: 10px 0px 300px;
-    background-image: url("/src/images/mapa.jpg");
-    
-}
