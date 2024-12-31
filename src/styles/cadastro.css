@@ -52,7 +52,7 @@ h2 {
 .cadastro {
     color: rgba(80, 80, 80, 0.911);
     background-color: #fff;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: bold;
     width: 90%;
     max-width: 400px;
@@ -60,17 +60,6 @@ h2 {
     padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.19);
     padding-bottom: 10px;
-}
-
-input {
-    margin-top: 10px;
-    background-color: rgba(170, 170, 170, 0.219);
-    height: 50px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    border: 1px solid #FFD700;
-    padding: 10px;
 }
 
 .botao-cadastro { 
@@ -102,9 +91,9 @@ input {
 
 .botao-voltar {
     display: flex;
-    margin: auto;
-    border: none;
-    justify-content: center;
+    margin: auto;       
+    border: none;       
+    justify-content:        center;
     align-items: center;
     text-align: center;
     background-color: #007FFF;
@@ -117,7 +106,7 @@ input {
     width: 80px;
     height: 40px;
     transition: 0.2s;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .botao-voltar:hover{
@@ -137,6 +126,109 @@ input {
 }
 
 .input-group{
-    margin-top: 23px;
-    margin-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* Animação */
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper .input {
+    height: 50px;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background-color:none;
+    outline: none;
+    border: 2px solid #8F00FF;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: 10px 10px 0px #0056ac;
+    transition: 0.5s;
+}
+
+.wrapper .label {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    color: #007fff;
+    transition: 0.5s;
+}
+
+.wrapper .top-line {
+    position: absolute;
+    border: 1px solid #8F00FF;
+    width: 0%;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+}
+
+.wrapper .bottom-line {
+    position: absolute;
+    border: 1px solid #8F00FF;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.wrapper .input:focus,
+.wrapper .input:valid {
+    box-shadow: none;
+}
+
+.wrapper .input:focus ~ .label,
+.wrapper .input:valid ~ .label {
+    top: -8px;
+    left: 15px;
+}
+
+.wrapper .input:focus ~ .top-line,
+.wrapper .input:valid ~ .top-line {
+    width: 57%;
+}
+
+.wrapper .input:focus ~ .bottom-line,
+.wrapper .input:valid ~ .bottom-line {
+    width: 100%;
+}
+
+.wrapper .label:hover {
+    cursor:auto;
+}
+
+/* Senha (+8 caracteres) */
+
+.wrapper .topline {
+    position: absolute;
+    border: 1px solid #8F00FF;
+    width: 0%;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+}
+
+.wrapper .input:focus ~ .topline, 
+.wrapper .input:focus ~ .topline {
+    width: 46%;
+}
+
+/* Confirmar senha */
+
+.wrapper .top--line {
+    position: absolute;
+    border: 1px solid #8F00FF;
+    width: 0%;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+}
+
+.wrapper .input:focus ~ .top--line, 
+.wrapper .input:focus ~ .top--line {
+    width: 50%;
 }
