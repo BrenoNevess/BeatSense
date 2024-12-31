@@ -24,13 +24,21 @@
                 <form action="">
 
                     <div class="space">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder=" Digite seu e-mail" required>
+                        <div class="wrapper">
+                            <input type="email" class="input" id="email" required>
+                            <label class="label" for="email">Digite seu e-mail</label>
+                            <span class="top-line"></span>
+                            <span class="bottom-line"></span>
+                        </div>
                     </div>
                     
                     <div class="space">
-                        <label for="senha">Senha:</label>
-                        <input type="password" id="senha" placeholder=" Digite sua senha" required>
+                        <div class="wrapper">
+                            <input type="password" class="input" id="password" required>
+                            <label class="label" for="password">Digite seu senha</label>
+                            <span class="top-line"></span>
+                            <span class="bottom-line"></span>
+                        </div>
                     </div>
 
                     <input class="enviar" type="submit" value="Entrar">
