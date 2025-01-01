@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Trade+Winds&display=swap');
-/* ARRUMAR O BOX-SHADOW */
+
+@font-face {
+    font-family: 'hypik';
+    src: url('hypik') format(opentype), url('hypik') format(truetype);
+}
+
 * {
 margin: 0;
     padding: 0;
@@ -8,7 +13,8 @@ margin: 0;
 
 h1{
     color: #007FFF;
-    font-family: "Trade Winds", serif;
+    font-family: 'hypik';
+    font-weight: 500;
 }
 
 .titulo{
@@ -146,7 +152,7 @@ h2 {
     border: 2px solid #8F00FF;
     border-top: 0;
     border-bottom: 0;
-    box-shadow: 10px 10px 0px #0056ac;
+    box-shadow: 10px 10px 0px #064788;
     transition: 0.5s;
 }
 
@@ -213,7 +219,7 @@ h2 {
 }
 
 .wrapper .input:focus ~ .topline, 
-.wrapper .input:focus ~ .topline {
+.wrapper .input:valid ~ .topline {
     width: 46%;
 }
 
@@ -229,6 +235,6 @@ h2 {
 }
 
 .wrapper .input:focus ~ .top--line, 
-.wrapper .input:focus ~ .top--line {
+.wrapper .input:valid ~ .top--line {
     width: 50%;
 }
