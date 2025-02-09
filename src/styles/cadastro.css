@@ -99,7 +99,7 @@ h2 {
     display: flex;
     margin: auto;       
     border: none;       
-    justify-content:        center;
+    justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #007FFF;
@@ -113,6 +113,7 @@ h2 {
     height: 40px;
     transition: 0.2s;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .botao-voltar:hover{
