@@ -15,15 +15,17 @@
     </div>
         <div class="caixa-cadastro">
             <div class="cadastro">
-                <form action="">
+                
                     <div class="mensagem">    
                         <h2>Bem-Vindo(a)</h2>
                         <h2>ao BeatSense</h2>
                     </div>
                     
+                    <form action="" method="get">
+
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="text" class="input" id="text" required>
+                            <input type="text" class="input" id="text" name="nome" required>
                             <label class="label" for="text">Digite seu nome</label>
                             <span class="top-line"></span>
                             <span class="bottom-line"></span>
@@ -32,7 +34,7 @@
 
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="email" class="input" id="email" required>
+                            <input type="email" class="input" id="email" name="e-mail" required>
                             <label class="label" for="email">Digite seu e-mail</label>
                             <span class="top-line"></span>
                             <span class="bottom-line"></span>
@@ -41,8 +43,8 @@
 
                     <div class="input-group">  
                         <div class="wrapper">
-                            <input type="password" class="input" id="email" required>
-                            <label class="label" for="email">Senha (+8 caracteres)</label>
+                            <input type="password" class="input" id="idpassword" name="password" required>
+                            <label class="label" for="idpassword">Senha (+8 caracteres)</label>
                             <span class="topline"></span>
                             <span class="bottom-line"></span>
                         </div>
@@ -50,8 +52,8 @@
 
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="password" class="input" id="password" required>
-                            <label class="label" for="password">Confirme sua senha</label>
+                            <input type="password" class="input" id="confirmpassword" name="password" required>
+                            <label class="label" for="confirmpassword">Confirme sua senha</label>
                             <span class="top--line"></span>
                             <span class="bottom-line"></span>
                         </div>
@@ -62,6 +64,6 @@
                 </form>
             </div>
         </div>
-        <button class="botao-voltar"><a href="/src/login.html">◀ Voltar</a></button>
+    <button class="botao-voltar"><a href="/src/login.html">◀ Voltar</a></button>
 </body>
 </html>
