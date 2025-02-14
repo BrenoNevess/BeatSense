@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Trade+Winds&display=swap');
 
 @font-face {
-    font-family:'hypik';
-    src: url('hypik') format(opentype), url('hypik') format(truetype);
+    font-family: 'Music';
+    src: url('../fonts/Musicografi.ttf') format(truetype);
+}
+
+@font-face {
+    font-family: 'notes' ;
+    src: url(../fonts/MUSICELE.TTF) format(truetype);
 }
 
 *{
@@ -19,8 +24,8 @@ body{
 
 h1{
     color: #007FFF;
-    font-family:'hypik';
-    font-weight: 500;
+    font-family:'Music', Times, serif;
+    font-size: 40px;
 }
 .container{
     background-color: #fff;
@@ -55,4 +60,3 @@ h1{
 .login:hover{
     background-color: #44a0fc;
 }
-
