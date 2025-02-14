@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Trade+Winds&display=swap');
 
 @font-face {
-    font-family:'music';
-    src: url('music.otf') format(opentype), url('music.otf') format(truetype);
+    font-family:'hypik';
+    src: url('hypik') format(opentype), url('hypik') format(truetype);
 }
 
 *{
@@ -19,7 +19,7 @@ body{
 
 h1{
     color: #007FFF;
-    font-family:'music';
+    font-family:'hypik';
     font-weight: 500;
 }
 .container{
