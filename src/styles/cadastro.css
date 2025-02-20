@@ -52,7 +52,7 @@ h2 {
     justify-content: center;
     align-items: center; 
     flex-direction: column;
-    min-height: 87vh;
+    min-height: 91vh;
 }
 
 .cadastro {
@@ -113,7 +113,7 @@ h2 {
     height: 40px;
     transition: 0.2s;
     margin-bottom: 30px;
-    margin-top: 10px;
+    margin-top: 13px;
 }
 
 .botao-voltar:hover{
