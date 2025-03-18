@@ -1,32 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Trade+Winds&display=swap');
 
 @font-face {
-    font-family: 'Music';
-    src: url('../fonts/Musicografi.ttf') format(truetype);
+    font-family: 'quantumm' ;
+    src: url(/src/fonts/quantum/quantrnd.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'notes' ;
-    src: url(../fonts/MUSICELE.TTF) format(truetype);
+    font-family: 'quantum';
+    src: url(/src/fonts/Quantum.otf) format('opentype');
 }
 
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body{
-    background-color: rgba(0, 87, 158, 0.205);
+    background-color: rgba(0, 87, 158, 0.2);
     margin: 0%;
     padding: 0%;
 }
 
 h1{
     color: #007FFF;
-    font-family:'Music', Times, serif;
+    font-family:'quantumm', Times, serif;
     font-size: 40px;
+    margin: 0;
+    padding: 0;
+    margin-left: 25px;
+    font-weight: 500;
 }
+
 .container{
     background-color: #fff;
     display: flex;
@@ -34,8 +39,6 @@ h1{
     position: relative;
     align-items: center;
     padding: 22px;
-    padding-left: 3%;
-
 }
 
 .login-container{
