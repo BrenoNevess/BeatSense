@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'quantumm';
+    src: url(/src/fonts/quantum/quantrnd.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'quantum';
+    src: url(/src/fonts/Quantum.otf) format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 87, 158, 0.2);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    color: #007FFF;
+    font-family:'quantumm', Times, serif;
+    font-size: 42px;
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+    font-weight: 500;
+    transform: translateY(2px);
+}
+
+.container {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    position: relative;
+    padding-left: 2%;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    background-color: #007FFF;
+    padding: 11px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login:hover {
+    background-color: #73b6f9;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        align-items: center;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 35px;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+    h1 {
+        font-size: 35px;
+    }
+    .login {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 25px;
+        text-align: center;
+        margin-left: 0;
+    }
+    .login {
+        padding: 8px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+}
