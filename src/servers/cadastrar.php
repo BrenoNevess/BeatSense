@@ -1,10 +1,10 @@
 <?php 
-require 'conexao.php';
+include ('conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = trim($_POST['nome']);
     $email = trim($_POST['email']);
-    $senha = $_POST['senha'];
+    $senha = $_POST['senha_hash'];
 
     if (empty($nome) || empty($email) || empty($senha)) {
         die("Preencha todos os campos!");
@@ -13,11 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     try {
-        $sql = "INSERT INTO beatsenseclient (nome, email, senha) VALUES (:nome, :email, :senha)";
+        $sql = "INSERT INTO usuarios (nome, email, senha_hash) VALUES (:nome, :email, :senha_hash)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([':nome' => $nome, ':email' => $email, ':senha' => $senhaHash]);
+        $stmt->execute([':nome' => $nome, ':email' => $email, ':senha_hash' => $senhaHash]);
 
-        echo "Usuário cadastrado com sucesso!";
+        header('location: /BeatSense/src/index.php');
+        exit();
+
     } catch (PDOException $e) {
         echo "Erro ao cadastrar: " . $e->getMessage();
     }

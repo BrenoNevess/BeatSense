@@ -7,7 +7,7 @@
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="/src/styles/paginicial.css">
+    <link rel="stylesheet" href="../src/styles/paginicial.css">
     <title>BeatSense</title>
 </head>
 <body>

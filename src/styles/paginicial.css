@@ -1,11 +1,8 @@
 @font-face {
-    font-family: 'quantumm';
-    src: url(/src/fonts/quantum/quantrnd.ttf) format(truetype);
-}
-
-@font-face {
-    font-family: 'quantum';
-    src: url(/src/fonts/Quantum.otf) format('opentype');
+    font-family: 'Quantum';
+    src: url('../fonts/quantum/quantrnd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
@@ -23,7 +20,7 @@ body {
 
 h1{
     color: #007FFF;
-    font-family:'quantumm', Times, serif;
+    font-family: 'Quantum', Arial, sans-serif !important;
     font-size: 42px;
     margin: 0;
     padding: 0;

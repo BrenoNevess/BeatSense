@@ -7,12 +7,12 @@
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="/src/styles/index.css">
+    <link rel="stylesheet" href="../src/styles/index.css">
     <title>Fazer login no BeatSense</title>
 </head>
 <body>
     <div class="container">
-        <a class="titulo" href="/src/paginicial.php"><h1>BeatSense</h1></a>
+        <a class="titulo" href="/src/paginicial.html"><h1>BeatSense</h1></a>
     </div>
     <div class="caixa-login">
         <div class="login">
@@ -21,11 +21,11 @@
                 <h2> no BeatSense</h2>
             </div>
 
-            <form action="/src/servers/login.php" method="get">
+            <form action="/BeatSense/src/servers/login.php" method="POST">
 
                 <div class="space">
                     <div class="wrapper">
-                        <input type="email" class="input" id="email" name="e-mail" required>
+                        <input type="email" class="input" id="email" name="email" required>
                         <label class="label" for="email">Digite seu e-mail</label>
                         <span class="top-line"></span>
                         <span class="bottom-line"></span>
@@ -34,7 +34,7 @@
 
                 <div class="space">
                     <div class="wrapper">
-                        <input type="password" class="input" id="idpassword" name="password" required>
+                        <input type="password" class="input" id="idpassword" name="senha_hash" required>
                         <label class="label" for="idpassword">Digite sua senha</label>
                         <span class="top-line"></span>
                         <span class="bottom-line"></span>   
@@ -43,7 +43,7 @@
 
                 <button class="enviar" type="submit">Entrar</button>
 
-                <p>Não possui uma conta? <a class="link" href="cadastro.html">Cadastrar-se</a></p>     
+                <p>Não possui uma conta? <a class="link" href="cadastro.php">Cadastrar-se</a></p>     
 
             </form>                               
         </div> 

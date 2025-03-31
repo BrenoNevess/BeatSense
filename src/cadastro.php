@@ -6,7 +6,7 @@
     <meta name="author" content="Breno Neves Nascimento">
     <meta name="description" content="Cadastrar seu e-mail no site">
     <meta name="keywords" content="cadastro, entrar, iniciar sessão">
-    <link rel="stylesheet" href="/src/styles/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="../src/styles/cadastro.css">
     <title>Cadastrar-se no BeatSense</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
                         <h2>ao BeatSense</h2>
                     </div>
                     
-                    <form action="/src/servers/cadastrar.php" method="post">
+                    <form action="/BeatSense/src/servers/cadastrar.php" method="POST">
 
                     <div class="input-group">
                         <div class="wrapper">
@@ -34,7 +34,7 @@
 
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="email" class="input" id="email" name="e-mail" required>
+                            <input type="email" class="input" id="email" name="email" required>
                             <label class="label" for="email">Digite seu e-mail</label>
                             <span class="top-line"></span>
                             <span class="bottom-line"></span>
@@ -43,7 +43,7 @@
 
                     <div class="input-group">  
                         <div class="wrapper">
-                            <input type="password" class="input" id="idpassword" name="password" required>
+                            <input type="password" class="input" id="idpassword" name="senha_hash" required>
                             <label class="label" for="idpassword">Senha (+8 caracteres)</label>
                             <span class="topline"></span>
                             <span class="bottom-line"></span>
@@ -61,7 +61,7 @@
 
                     <button type="submit" class="botao-cadastro">Cadastrar</button>
                         
-                    <p>Já possui uma conta? <a class="link" href="/src/index.html">Faça Login</a></p>
+                    <p>Já possui uma conta? <a class="link" href="index.php">Faça Login</a></p>
                 
                 </form>
             </div>
