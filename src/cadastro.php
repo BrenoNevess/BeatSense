@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <a class="titulo" href="/src/index.html"><h1>BeatSense</h1></a>
+        <a class="titulo" href="index.php"><h1>BeatSense</h1></a>
     </div>
         <div class="caixa-cadastro">
             <div class="cadastro">
@@ -52,7 +52,7 @@
 
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="password" class="input" id="confirmpassword" name="password" required>
+                            <input type="password" class="input" id="confirmpassword" name="senha_hash" required>
                             <label class="label" for="confirmpassword">Confirme sua senha</label>
                             <span class="top--line"></span>
                             <span class="bottom-line"></span>
