@@ -8,7 +8,7 @@
             $senha = md5($_POST["senha"]);
 
             
-            $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('{$nome}', '{$email}', '{$senha}')";
+            $sql = "INSERT INTO usuarios (nome, email, senha_hash) VALUES ('{$nome}', '{$email}', '{$senha}')";
 
 
             $res = $conn->query($sql);
