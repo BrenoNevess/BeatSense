@@ -52,7 +52,7 @@
 
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="password" class="input" id="confirmpassword" name="senha_hash" required>
+                            <input type="password" class="input" id="confirmpassword" name="senha_confirmar_hash" required>
                             <label class="label" for="confirmpassword">Confirme sua senha</label>
                             <span class="top--line"></span>
                             <span class="bottom-line"></span>

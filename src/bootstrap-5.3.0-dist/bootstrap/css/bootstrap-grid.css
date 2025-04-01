@@ -4082,4 +4082,10 @@
   }
 }
 
+@font-face {
+  font-family: 'Quantum';
+  src: url('../fonts/quantum/quantrnd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /*# sourceMappingURL=bootstrap-grid.css.map */

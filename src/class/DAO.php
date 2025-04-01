@@ -18,20 +18,25 @@ class UsuarioDAO {
         $stmt->bindValue(':nome', $usuario->getNome());
         $stmt->bindValue(':email', $usuario->getEmail());
         $stmt->bindValue(':senha', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
+        $stmt->bindValue(':senha_confirmar', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
         
         return $stmt->execute();
     }
 
     // Atualizar um usuário existente
     public function alterar(Usuario $usuario) {
-        $query = "UPDATE usuarios SET 
+        $query = "UPDATE usuarios SET
                   nome = :nome, 
-                  email = :email 
+                  email = :email
+                  senha = :senha
+                  senha_confirmar = :senha_confirmar
                   WHERE id = :id";
         $stmt = $this->db->prepare($query);
         
         $stmt->bindValue(':nome', $usuario->getNome());
         $stmt->bindValue(':email', $usuario->getEmail());
+        $stmt->bindValue(':senha', $usuario->getSenha());
+        $stmt->bindValue(':senha_confirmar', $usuario->getSenha());
         $stmt->bindValue(':id', $usuario->getId(), PDO::PARAM_INT);
         
         return $stmt->execute();
@@ -48,7 +53,7 @@ class UsuarioDAO {
 
     // Buscar todos os usuários
     public function getAllUsuarios() {
-        $query = "SELECT id, nome, email, data_criacao FROM usuarios ORDER BY nome";
+        $query = "SELECT id, nome, email, senha_confirmar, criado_em FROM usuarios ORDER BY nome";
         $stmt = $this->db->query($query);
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -56,7 +61,7 @@ class UsuarioDAO {
 
     // Buscar usuário pelo ID
     public function getById($id) {
-        $query = "SELECT id, nome, email, data_criacao FROM usuarios WHERE id = :id";
+        $query = "SELECT id, nome, email, senha_confirmar, criado_em FROM usuarios WHERE id = :id";
         $stmt = $this->db->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();

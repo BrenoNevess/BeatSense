@@ -7,7 +7,7 @@
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="../src/styles/index.css">
+    <link rel="stylesheet" href="../src/styles/login.css">
     <title>Fazer login no BeatSense</title>
 </head>
 <body>

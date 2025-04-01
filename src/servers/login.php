@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($usuario && password_verify($senha, $usuario['senha_hash'])) { 
             $_SESSION['user_type'] = 'usuario';
-            header('Location: ../paginicial.php');
+            header('Location: ../index.php');
             exit();
         }
 
