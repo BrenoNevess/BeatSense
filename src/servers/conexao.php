@@ -1,13 +1,22 @@
-<?php 
-    $host = 'localhost';
-    $username = 'root'; 
-    $password = '';
-    $dbname = 'beatsense';
-
-    try {
-        $pdo = new PDO ("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-       die("Erro ao se conectar" . $e->getMessage());
+<?php
+class Conexao {
+    private static $host="localhost";
+    private static $username="root";
+    private static $password="";
+    private static $dbname="beatsense";
+    
+    
+    public static function GetConexao() {
+        try {
+            $dsn = "mysql:host=" . self::$host . ";dbname=" . self::$dbname . ";charset=utf8";
+            $db = new PDO($dsn, self::$username, self::$password);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $db;
+        } catch (PDOException $e) {
+            die("Erro ao conectar ao banco de dados: " . $e->getMessage());
+        }
     }
+    
+}
+
 ?>

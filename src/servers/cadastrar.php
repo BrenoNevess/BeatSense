@@ -1,24 +1,30 @@
 <?php 
-include ('conexao.php');
+include('conexao.php');
+
+$db = Conexao::GetConexao();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = trim($_POST['nome']);
     $email = trim($_POST['email']);
-    $senha = $_POST['senha_hash'];
-    $senha_confirmar = $_POST['senha_confirmar_hash'];
+    $senha = $_POST['senha'];
+    $senha_confirmar = $_POST['senha_confirmar'];
 
     if (empty($nome) || empty($email) || empty($senha) || empty($senha_confirmar)) {
         die("Preencha todos os campos!");
     }
 
+    if($senha !== $senha_confirmar){
+    echo("As senhas não coicidem!");
+    }
+
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     try {
-        $sql = "INSERT INTO usuarios (nome, email, senha_hash, senha_confirmar_hash) VALUES (:nome, :email, :senha_hash, :senha_confirmar_hash)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([':nome' => $nome, ':email' => $email, ':senha_hash' => $senhaHash, ':senha_confirmar_hash' => $senhaHash]);
+        $sql = "INSERT INTO adm (nome, email, senha) VALUES (:nome, :email, :senha)";
+        $stmt = $db->prepare($sql);
+        $stmt->execute([':nome' => $nome, ':email' => $email, ':senha' => $senhaHash]);
 
-        header('location: /BeatSense/src/login.php');
+        header('location: /BeatSense/src/login.php');       
         exit();
 
     } catch (PDOException $e) {

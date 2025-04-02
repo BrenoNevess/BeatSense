@@ -43,8 +43,8 @@
 
                     <div class="input-group">  
                         <div class="wrapper">
-                            <input type="password" class="input" id="idpassword" name="senha_hash" required>
-                            <label class="label" for="idpassword">Senha (+8 caracteres)</label>
+                            <input type="password" class="input" id="idpassword" name="senha" required>
+                            <label class="label" for="idpassword">Digite sua senha</label>
                             <span class="topline"></span>
                             <span class="bottom-line"></span>
                         </div>
@@ -52,7 +52,7 @@
 
                     <div class="input-group">
                         <div class="wrapper">
-                            <input type="password" class="input" id="confirmpassword" name="senha_confirmar_hash" required>
+                            <input type="password" class="input" id="confirmpassword" name="senha_confirmar" required>
                             <label class="label" for="confirmpassword">Confirme sua senha</label>
                             <span class="top--line"></span>
                             <span class="bottom-line"></span>
@@ -61,7 +61,7 @@
 
                     <button type="submit" class="botao-cadastro">Cadastrar</button>
                         
-                    <p>Já possui uma conta? <a class="link" href="index.php">Faça Login</a></p>
+                    <p>Já possui uma conta? <a class="link" href="login.php">Faça Login</a></p>
                 
                 </form>
             </div>

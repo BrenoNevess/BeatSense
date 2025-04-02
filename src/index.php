@@ -23,7 +23,7 @@
 
         .hero-section {
             position: relative;
-            background: url('https://images.pexels.com/photos/33597/guitar-classical-guitar-acoustic-guitar-electric-guitar.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover;
+            background: url('https://images.pexels.com/photos/3120109/pexels-photo-3120109.jpeg?cs=srgb&dl=pexels-fotograf-jylland-1557004-3120109.jpg&fm=jpg') center/cover;
             object-fit: cover;
             display: flex;
             align-items: center;

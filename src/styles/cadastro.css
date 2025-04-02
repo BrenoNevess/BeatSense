@@ -207,7 +207,7 @@ p{
 
 .wrapper .input:focus ~ .topline, 
 .wrapper .input:valid ~ .topline {
-    width: 50%;
+    width: 58%;
 }
 
 /* Confirmar senha */

@@ -34,7 +34,7 @@
 
                 <div class="space">
                     <div class="wrapper">
-                        <input type="password" class="input" id="idpassword" name="senha_hash" required>
+                        <input type="password" class="input" id="idpassword" name="senha" required>
                         <label class="label" for="idpassword">Digite sua senha</label>
                         <span class="top-line"></span>
                         <span class="bottom-line"></span>   

@@ -2,30 +2,32 @@
 session_start();
 include('conexao.php');
 
+$db = Conexao::GetConexao();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
-    $senha = $_POST['senha_hash'];
+    $senha = $_POST['senha'];
 
     try {
         // Verificar se é um adm
-        $stmt = $pdo->prepare("SELECT * FROM adm WHERE email = :email");
+        $stmt = $db->prepare("SELECT * FROM adm WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($admin && $admin['senha_hash'] === $senha) {
+        if ($admin && password_verify($senha, $admin['senha'])) {
             $_SESSION['user_type'] = 'adm';
             header('Location: ../adm/painel.php');
             exit();
         }
 
-        // Verificar se é um usuario
-        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
+        // Verificar se é um usuário comum
+        $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($usuario && password_verify($senha, $usuario['senha_hash'])) { 
+        if ($usuario && password_verify($senha, $usuario['senha'])) { 
             $_SESSION['user_type'] = 'usuario';
             header('Location: ../index.php');
             exit();
