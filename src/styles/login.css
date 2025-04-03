@@ -12,9 +12,9 @@
 }
 
 h1{
-    color: #ffffff;
+    color: #007FFF;
     font-family:'Quantum', Times, serif;
-    font-size: 38px;
+    font-size: 42px;
     margin: 0;
     padding: 0;
     margin-left: 15px;
@@ -27,7 +27,7 @@ h1{
 }
 
 .container{
-    background-color: #007FFF;
+    background-color: #fff;
     display: flex;
     position: relative;
     align-items: center;

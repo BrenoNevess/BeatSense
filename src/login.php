@@ -7,7 +7,7 @@
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="../src/styles/login.css">
+    <link rel="stylesheet" href="styles/login.css">
     <title>Fazer login no BeatSense</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
                 <h2>Acesse sua conta</h2>
                 <h2> no BeatSense</h2>
             </div>
-    
+
             <form action="/BeatSense/src/servers/login.php" method="POST">
 
                 <div class="space">
