@@ -55,23 +55,41 @@
 
         .titulo {
             display: flex;
-            transform: translateY(3px) translateX(-40px);
+            transform: translateY(3px) translateX(-10px);
+            font-size: 42px;
+            font-family:'Quantum', Times, serif;
+            font-weight: 500; 
+        }
+
+        #sessao{
+            border: 1px solid #fff;
+            border-radius: 10px;
+            background-color: #0056b3;
+            font-weight: 600;
+        }
+
+        #sessao:hover{
+            background-color: #0c66c5;
+        }
+        
+        .nav-item{
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #007FFF;">
         <div class="container">
-            <a class="navbar-brand titulo" href="index.php"><h1 class="titulo" style="font-family: 'Quantum'; ">BeatSense</h1></a>
+            <a class="navbar-brand titulo" href="index.php"><h1 class="titulo">BeatSense</h1></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="login.php">Iniciar Sessão</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#teoria">Teoria Musical</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#contato">Contato</a></li>
+                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="login.php">Iniciar Sessão</a></li>
                 </ul>
             </div>
         </div>
@@ -80,7 +98,14 @@
     <div class="hero-section">
         <h2>Aprenda Teoria Musical de Forma Simples</h2>
     </div>
-    
+
+    <div class="container mt-5 text-center" id="sobre">
+        <h2 class="mb-3">Sobre o BeatSense</h2>
+        <p class="lead">O <strong>BeatSense</strong> é um site dedicado ao ensino de teoria musical de forma acessível e prática. 
+        Criado para auxiliar músicos iniciantes e membros da Congregação Cristã no Brasil, 
+        oferecendo materiais educativos que simplificam o aprendizado e ajudam você a desenvolver seus conhecimentos musicais.</p>
+    </div>
+
     <div class="container mt-5" id="teoria">
         <h2 class="text-center mb-4">Fundamentos da Teoria Musical</h2>
         <div class="row">
@@ -113,9 +138,20 @@
             </div>
         </div>
     </div>
+
+    <footer class="text-light py-4 mt-5" style="background-color: #007FFF;">
+        <div class="container text-center">
+            <h5 class="mb-3">BeatSense</h5>
+            <p class="mb-2">Aprenda teoria musical de forma fácil e acessível.</p>
+            
+            <div class="d-flex justify-content-center mb-3">
+                <a href="#teoria" class="text-light text-decoration-none mx-3">Teoria Musical</a>
+                <a href="#sobre" class="text-light text-decoration-none mx-3">Sobre</a>
+                <a href="#contato" class="text-light text-decoration-none mx-3">Contato</a>
+            </div>
     
-    <footer class="text-light text-center p-3 mt-5" style="background-color: #007FFF;">
-        <p>&copy; 2025 BeatSense. Todos os direitos reservados.</p>
+            <p class="mb-0">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body> 
 </html>

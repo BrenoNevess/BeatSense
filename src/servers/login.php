@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = $_POST['senha'];
 
     try {
+        
         // Verificar se é um adm
         $stmt = $db->prepare("SELECT * FROM adm WHERE email = :email");
         $stmt->bindParam(':email', $email);
