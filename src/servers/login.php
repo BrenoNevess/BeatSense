@@ -18,9 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($admin && password_verify($senha, $admin['senha'])) {
             $_SESSION['user_type'] = 'adm';
+            $_SESSION['adm_id'] = $adm['id'];
             header('Location: ../adm/painel.php');
             exit();
-        }
+        }    
 
         // Verificar se é um usuário comum
         $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($usuario && password_verify($senha, $usuario['senha'])) { 
             $_SESSION['user_type'] = 'usuario';
+            $_SESSION['usuario_id'] = $usuario['id'];
             header('Location: ../index.php');
             exit();
         }

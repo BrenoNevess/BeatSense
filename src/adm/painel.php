@@ -1,6 +1,10 @@
-<?php 
-include ('CRUD.php');
-include ('protect.php');
+<?php
+include('protect_adm.php');
+include('CRUD.php');
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'adm') {
+    header("Location: ../index.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,6 +13,11 @@ include ('protect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatSense - PAINEL ADM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #button{
+            margin-right: 15px;
+        }
+    </style>
 </head>
 <body class="container mt-4">
 
@@ -30,7 +39,7 @@ include ('protect.php');
 
         <div class="mb-3">
             <label>Senha:</label>
-            <input type="password" name="senha" id="senha" class="form-control" required>
+            <input type="password" name="senha" id="senha" class="form-control">
         </div>
 
         <button type="submit" name="adicionar" id="btnSalvar" class="btn btn-primary">Adicionar</button>
@@ -60,7 +69,9 @@ include ('protect.php');
             <?php endforeach; ?>
         </tbody>
     </table>
-
+    <a href="../index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
+    <a href="../servers/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
+    
     <script src="../bootstrap-5.3.0-dist/bootstrap/js/painel.js"></script>
 
 </body>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,7 +27,7 @@
 
         .hero-section {
             position: relative;
-            background: url('https://images.pexels.com/photos/3120109/pexels-photo-3120109.jpeg?cs=srgb&dl=pexels-fotograf-jylland-1557004-3120109.jpg&fm=jpg') center/cover;
+            background: url('img/violino.jpg') center/cover;
             object-fit: cover;
             display: flex;
             align-items: center;
@@ -74,10 +78,28 @@
         
         .nav-item{
             font-weight: 600;
+            margin-left: 15px;
         }
+
+        .card{
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.34) !important;
+        }
+
     </style>
 </head>
 <body>
+    <?php if (isset($_SESSION['mensagem_erro'])): ?>
+        <div id="mensagem-login" class="alert alert-danger text-center position-fixed start-50 translate-middle-x shadow" style="top: 40px; z-index: 9999; width: 100%; max-width: 450px;">
+            <?= $_SESSION['mensagem_erro']; ?>
+        </div>
+        <?php unset($_SESSION['mensagem_erro']); ?>
+    <?php endif; ?>
+
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #007FFF;">
         <div class="container">
             <a class="navbar-brand titulo" href="index.php"><h1 class="titulo">BeatSense</h1></a>
@@ -89,12 +111,16 @@
                     <li class="nav-item"><a class="nav-link text-light" href="#teoria">Teoria Musical</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#contato">Contato</a></li>
-                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="login.php">Iniciar Sessão</a></li>
-                </ul>
+                    <?php if(isset($_SESSION['user_type'])):?>
+                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="servers/logout.php">Encerrar Sessão</a></li>
+                    <?php else: ?>
+                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
+                    <?php endif; ?>
+              
             </div>
         </div>
     </nav>
-    
+
     <div class="hero-section">
         <h2>Aprenda Teoria Musical de Forma Simples</h2>
     </div>
@@ -110,15 +136,18 @@
         <h2 class="text-center mb-4">Fundamentos da Teoria Musical</h2>
         <div class="row">
             <div class="col-md-4">
+                <a href="modulo1.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
-                    <a href=""><img src="https://static.todamateria.com.br/upload/no/ta/notas-musicais-og.jpg" class="card-img-top" alt="Notas Musicais"></a>
+                    <img src="https://static.todamateria.com.br/upload/no/ta/notas-musicais-og.jpg" class="card-img-top" alt="Notas Musicais">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #007FFF;">Notas Musicais</h5>
                         <p class="card-text">Entenda as notas musicais, sua formação e aplicação na música.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-md-4">
+                <a href="modulo2.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
                     <img src="https://akamai.sscdn.co/gcs/cifra-blog/pt/wp-content/uploads/2021/11/c4a022f-teoria-musical.jpg" class="card-img-top" alt="Escalas Musicais">
                     <div class="card-body">
@@ -126,8 +155,10 @@
                         <p class="card-text">Conheça as escalas maiores e menores e como elas são utilizadas.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-md-4">
+                <a href="modulo3.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
                     <img src="https://source.unsplash.com/400x300/?music,rhythm" class="card-img-top" alt="Ritmo e Compassos">
                     <div class="card-body">
@@ -135,6 +166,7 @@
                         <p class="card-text">Aprenda sobre tempos, compassos e como contar corretamente.</p>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
@@ -153,5 +185,6 @@
             <p class="mb-0">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
 </body> 
 </html>

@@ -12,14 +12,13 @@ class UsuarioDAO {
 
     // Cadastrar um novo usuário
     public function cadastrar(Usuarios $usuario) {
-        $query = "INSERT INTO usuarios (nome, email, senha_hash, senha_confirmar_hash, criado_em) 
-                  VALUES (:nome, :email, :senha_hash, :senha_confirmar_hash, NOW())";
+        $query = "INSERT INTO usuarios (nome, email, senha, criado_em) 
+                  VALUES (:nome, :email, :senha, :senha_confirmar, NOW())";
         $stmt = $this->db->prepare($query);
         
         $stmt->bindValue(':nome', $usuario->getNome());
         $stmt->bindValue(':email', $usuario->getEmail());
         $stmt->bindValue(':senha_hash', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
-        $stmt->bindValue(':senha_confirmar_hash', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
         
         return $stmt->execute();
     }
@@ -29,15 +28,13 @@ class UsuarioDAO {
         $query = "UPDATE usuarios SET
                   nome = :nome, 
                   email = :email, 
-                  senha_hash = :senha_hash, 
-                  senha_confirmar_hash = :senha_confirmar_hash
+                  senha = :senha, 
                   WHERE id = :id";
         $stmt = $this->db->prepare($query);
         
         $stmt->bindValue(':nome', $usuario->getNome());
         $stmt->bindValue(':email', $usuario->getEmail());
-        $stmt->bindValue(':senha_hash', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
-        $stmt->bindValue(':senha_confirmar_hash', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
+        $stmt->bindValue(':senha', password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
         $stmt->bindValue(':id', $usuario->getId(), PDO::PARAM_INT);
         
         return $stmt->execute();
