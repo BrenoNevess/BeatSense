@@ -36,7 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
 
-        echo "Credenciais inválidas. Tente novamente.";
+        else {
+        $_SESSION['mensagem_erro'] = 'E-mail ou senha incorretos. Verifique suas credenciais.';
+        header('Location: ../loginpage.php');
+        exit();
+        }
 
     } catch (PDOException $e) {
         echo "Erro no login: " . $e->getMessage();

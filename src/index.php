@@ -116,6 +116,10 @@ session_start();
                     <?php else: ?>
                     <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
                     <?php endif; ?>
+
+                    <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'):?>
+                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="adm/painel.php">Painel ADM</a></li>
+                    <?php endif;?>
               
             </div>
         </div>

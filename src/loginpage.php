@@ -1,3 +1,6 @@
+<?php 
+include('servers/login.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,12 +11,50 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" href="styles/login.css">
-    <title>Fazer login no BeatSense</title>
+    <title>BeatSense - Login</title>
+    <style>
+        #mensagem-login{
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffdddd;
+            color: #a94442;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                top: 20px;
+            }
+            to {
+                opacity: 1;
+                top: 50px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <a class="titulo" href="index.php"><h1>BeatSense</h1></a>
     </div>
+
+    <?php if (isset($_SESSION['mensagem_erro'])): ?>
+        <div id="mensagem-login">
+            <?= $_SESSION['mensagem_erro']; ?>
+        </div>
+        <?php unset($_SESSION['mensagem_erro']); ?>
+    <?php endif; ?>
+
     <div class="caixa-login">
         <div class="login">
             <div class="h2">
@@ -47,6 +88,6 @@
 
             </form>                               
         </div> 
-    </div> 
+        <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
 </body>
 </html>
