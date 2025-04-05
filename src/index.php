@@ -8,8 +8,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Breno Neves Nascimento">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="BeatSense é um site voltado para ensinar a teoria musical, com ele o músico aprenderá os os fundamentos musicais">
+    <meta name="keywords" content="BeatSense, teoria musical, música, ritmo, figuras musicais, som, timbre, altura, intensidade, duração, aprendizado musical, educação musical, leitura musical, notas musicais, pausas musicais, fundamentos da música, ensino de música, conteúdo musical interativo, site educativo, acessibilidade na música, música para iniciantes, teoria musical para iniciantes, Congregação Cristã no Brasil, música CCB, jovens músicos, leitura de partituras, símbolos musicais, curso de teoria musical gratuito">
     <title>BeatSense - Ensino de Música</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -90,6 +90,9 @@ session_start();
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.34) !important;
         }
 
+        .card-text{
+            text-align: left;
+        }    
     </style>
 </head>
 <body>
@@ -142,10 +145,10 @@ session_start();
             <div class="col-md-4">
                 <a href="modulo1.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
-                    <img src="https://static.todamateria.com.br/upload/no/ta/notas-musicais-og.jpg" class="card-img-top" alt="Notas Musicais">
+                    <img src="img/Módulo 1 2.0.webp" class="card-img-top" alt="Módulo 1">
                     <div class="card-body">
-                        <h5 class="card-title" style="color: #007FFF;">Notas Musicais</h5>
-                        <p class="card-text">Entenda as notas musicais, sua formação e aplicação na música.</p>
+                        <h5 class="card-title" style="color: #007FFF;">Módulo 1</h5>
+                        <p class="card-text">Entenda o que é música, como funciona o ritmo, conheça as propridades do som e as figuras musicais.</p>
                     </div>
                 </div>
                 </a>
@@ -153,9 +156,9 @@ session_start();
             <div class="col-md-4">
                 <a href="modulo2.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
-                    <img src="https://akamai.sscdn.co/gcs/cifra-blog/pt/wp-content/uploads/2021/11/c4a022f-teoria-musical.jpg" class="card-img-top" alt="Escalas Musicais">
+                    <img src="img/Módulo 2.webp" class="card-img-top" alt="Módulo 2">
                     <div class="card-body">
-                        <h5 class="card-title" style="color: #007FFF;">Escalas e Tons</h5>
+                        <h5 class="card-title" style="color: #007FFF;">Módulo 2</h5>
                         <p class="card-text">Conheça as escalas maiores e menores e como elas são utilizadas.</p>
                     </div>
                 </div>
