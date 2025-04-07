@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="styles/modulo1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="modulo-azul">
   <header class="topo">
@@ -64,43 +66,43 @@
           <tr>
             <td class="figuras">𝅝/𝄻</td>
             <td>Semibreve</td>
-            <td>Mais longa</td>
+            <td>Figura de maior duração utilizada e as outras figuras são frações dela.</td>
             <td>1</td>
           </tr>
           <tr>
             <td class="figuras">𝅗𝅥/𝄼</td>
             <td>Mínima</td>
-            <td>Meia da semibreve</td>
+            <td>Metade da semibreve \( \frac{1}{2} \)</td>
             <td>2</td>
           </tr>
           <tr>
             <td class="figuras">𝅘𝅥/𝄽</td>
             <td>Semínima</td>
-            <td>Mais comum</td>
+            <td>Metade da mínima e \( \frac{1}{4} \) da semibreve</td>
             <td>4</td>
           </tr>
           <tr>
             <td class="figuras">𝅘𝅥𝅮/𝄾</td>
             <td>Colcheia</td>
-            <td>Metade da semínima</td>
+            <td>Metade da semínima e \( \frac{1}{8} \) da semibreve</td>
             <td>8</td>
           </tr>
           <tr>
             <td class="figuras">𝅘𝅥𝅯/𝄿</td>
             <td>Semicolcheia</td>
-            <td>Muito rápida</td>
+            <td>Metade da colcheia e \( \frac{1}{16} \) da semibreve</td>
             <td>16</td>
           </tr>
           <tr>
             <td class="figuras">𝅘𝅥𝅰/𝅀</td>
             <td>Fusa</td>
-            <td>Extremamente rápida</td>
+            <td>Metade da semicolcheia e \( \frac{1}{32} \) da semibreve</td>
             <td>32</td>
           </tr>
           <tr>
             <td class="figuras">𝅘𝅥𝅱/𝅁</td>
             <td>Semifusa</td>
-            <td>A menor figura</td>
+            <td>Metade da fusa e \( \frac{1}{64} \) da semibreve</td>
             <td>64</td>
           </tr>
         </table>

@@ -92,7 +92,13 @@ session_start();
 
         .card-text{
             text-align: left;
-        }    
+        }
+
+        .card-img-top{
+            max-width: 415px;
+            width: 100%;
+            height: 240px;
+        }
     </style>
 </head>
 <body>

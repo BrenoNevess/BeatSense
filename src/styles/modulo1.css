@@ -86,7 +86,6 @@ th {
     width: 250px;
     display: block;
     margin: 15px auto;
-    border: 2px solid #3399ff;
     border-radius: 8px;
 }
   
@@ -99,7 +98,7 @@ footer{
 }
 
 .figuras{
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .items{
