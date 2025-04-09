@@ -164,7 +164,7 @@ session_start();
                 <div class="card shadow-sm">
                     <img src="img/Módulo 2.webp" class="card-img-top" alt="Módulo 2">
                     <div class="card-body">
-                        <h5 class="card-title" style="color: #007FFF;">Módulo 2</h5>
+                        <h5 class="card-title" style="color: #2ecc71; ">Módulo 2</h5>
                         <p class="card-text">Conheça as escalas maiores e menores e como elas são utilizadas.</p>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ session_start();
                 <div class="card shadow-sm">
                     <img src="https://source.unsplash.com/400x300/?music,rhythm" class="card-img-top" alt="Ritmo e Compassos">
                     <div class="card-body">
-                        <h5 class="card-title" style="color: #007FFF;">Ritmo e Compassos</h5>
+                        <h5 class="card-title" style="color: #f39c12;">Módulo 3</h5>
                         <p class="card-text">Aprenda sobre tempos, compassos e como contar corretamente.</p>
                     </div>
                 </div>

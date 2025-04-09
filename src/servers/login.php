@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($admin && password_verify($senha, $admin['senha'])) {
             $_SESSION['user_type'] = 'adm';
             $_SESSION['adm_id'] = $adm['id'];
-            header('Location: ../index.php');
+            header('Location: ../adm/painel.php');
             exit();
         }    
 
