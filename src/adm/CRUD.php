@@ -13,14 +13,11 @@ if (isset($_POST["adicionar"])) {
     $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
     if ($stmt->rowCount() > 0) {
-        echo "Este e-mail já está cadastrado!";
+        $_SESSION['message-erro'] = 'E-mail já cadastrado.';
     } else {
-
         $stmt = $db->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
         if ($stmt->execute([$nome, $email, $senha])) {
-            echo "Usuário cadastrado com sucesso!";
-        } else {
-            echo "Erro ao cadastrar usuário.";
+            $_SESSION['message-user-success'] = 'Usuário cadastrado com sucesso!';
         }
     }
 }
@@ -30,15 +27,21 @@ if (isset($_POST["editar"])) {
     $id = $_POST["id"];
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $sql = "UPDATE usuarios SET nome='$nome', email='$email' WHERE id=$id";
-    $db->query($sql);
+    
+    $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ? WHERE id = ?");
+    if ($stmt->execute([$nome, $email, $id])) {
+        $_SESSION['message-update'] = 'Usuário atualizado com sucesso!';
+    }
 }
 
 //Excluir usuario
 if (isset($_GET["deletar"])) {
     $id = $_GET["deletar"];
-    $sql = "DELETE FROM usuarios WHERE id=$id";
-    $db->query($sql);
+    
+    $stmt = $db->prepare("DELETE FROM usuarios WHERE id = ?");
+    if ($stmt->execute([$id])) {
+        $_SESSION['message-delete'] = 'Usuário deletado com sucesso!';
+    }
 }
 
 //Buscar usuarios

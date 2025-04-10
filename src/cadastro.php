@@ -1,3 +1,6 @@
+<?php 
+include("servers/cadastrar.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,11 +11,49 @@
     <meta name="keywords" content="cadastro, entrar, iniciar sessão">
     <link rel="stylesheet" type="text/css" href="../src/styles/cadastro.css">
     <title>Cadastrar-se no BeatSense</title>
+    <style>
+        #mensagem-login{
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f8d1d4;
+            color: #5c1518;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                top: 20px;
+            }
+            to {
+                opacity: 1;
+                top: 50px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <a class="titulo" href="index.php"><h1>BeatSense</h1></a>
     </div>
+
+    <?php if (isset($_SESSION['mensagem_erro'])): ?>
+        <div id="mensagem-login">
+            <?= $_SESSION['mensagem_erro']; ?>
+        </div>
+        <?php unset($_SESSION['mensagem_erro']); ?>
+    <?php endif; ?>
+
         <div class="caixa-cadastro">
             <div class="cadastro">
                 
@@ -61,11 +102,11 @@
 
                     <button type="submit" class="botao-cadastro">Cadastrar</button>
                         
-                    <p>Já possui uma conta? <a class="link" href="login.php">Faça Login</a></p>
+                    <p>Já possui uma conta? <a class="link" href="loginpage.php">Faça Login</a></p>
                 
                 </form>
             </div>
         </div>
-            
+        <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
 </body>
 </html>

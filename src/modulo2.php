@@ -22,6 +22,7 @@
     <section class="card">
       <h2>📏 O que é Compasso?</h2>
       <p>O compasso é a divisão do tempo musical em partes iguais, chamadas de tempos. Ele organiza a música e facilita a leitura rítmica, eles podem ser simples ou compostos, mas para não complicar, neste módulo iremos falar sobre o simples.</p>
+      <img class="campasso-img" src="img/compasso.jpg" alt="Compasso musical">
     </section>
 
     <section class="card">
@@ -58,15 +59,16 @@
     </section>
 
     <section class="card">
+      <h2>➕ Linhas e Espaços Suplementares</h2>
+      <p>Quando uma nota é muito aguda ou muito grave e ultrapassa os limites do pentagrama, usamos <strong>linhas e espaços suplementares</strong> para continuar representando essas notas corretamente. Clique no botão para visualizar exemplo:</p><button class="linhas" onclick="toggleInfo('suplementar')">⬇</button>
+      <div id="suplementar" class="content-div" style="display: none;"><img class="card-img" src="img/complementar.jpg" alt="Linhas suplementares"></div>
+    </section>
+
+    <section class="card">
       <h2>🎵 Notas Musicais</h2>
       <p>Ao total temos 7 notas musicais, sendo elas: <strong>Dó, Ré, Mi, Fá, Sol, Lá e Si</strong>.  
       Elas são escritas nas linhas e espaços do pentagrama e seguem uma ordem fixa.</p>
       <img src="img/Notas musicais.jpg" alt="Notas musicais">
-    </section>
-    
-    <section class="card">
-      <h2>➕ Linhas e Espaços Suplementares</h2>
-      <p>Quando uma nota é muito aguda ou muito grave e ultrapassa os limites do pentagrama, usamos <strong>linhas e espaços suplementares</strong> para continuar representando essas notas corretamente.</p>
     </section>
 
     <section class="card">
@@ -116,6 +118,11 @@
       function toggleInfo(id) {
         const info = document.getElementById(id);
         info.style.display = info.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function toggleInfo(id){
+        const suplementar = document.getElementById(id)
+        suplementar.style.display = suplementar.style.display === 'block' ? 'none' : 'block';
       }
     </script>
 </body>

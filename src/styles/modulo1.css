@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,8 +10,8 @@ body {
     background-color: #f2f8ff;
     color: #1a355b;
     transition: background-color 0.3s ease;
-  }
-  
+}
+
 .topo {
     background: linear-gradient(to right, #003366, #3399ff);
     color: white;
@@ -19,7 +19,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-  
+
 .conteudo {
     padding: 30px 20px;
     display: grid;
@@ -27,7 +27,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
-  
+
 .card {
     background-color: white;
     border-left: 6px solid #007bff;
@@ -36,32 +36,32 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-  
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
-  
+
 h1 {
     font-size: 2.2rem;
     margin-bottom: 10px;
 }
-  
+
 h2 {
     font-size: 1.5rem;
     margin-bottom: 8px;
 }
-  
+
 h3 {
     font-size: 1.2rem;
     margin-top: 20px;
     margin-bottom: 8px;
 }
-  
+
 ul {
     padding-left: 20px;
 }
-  
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -70,26 +70,27 @@ table {
     border-radius: 8px;
     overflow: hidden;
 }
-  
+
 th, td {
     border: 1px solid #cce0ff;
     padding: 12px;
     text-align: center;
 }
-  
+
 th {
     background-color: #e0efff;
     color: #003366;
 }
-  
+
 .img-figura {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     display: block;
     margin: 15px auto;
     border-radius: 8px;
 }
-  
-footer{
+
+footer {
     text-align: center; 
     padding: 15px;
     background: linear-gradient(to right, #003366, #3399ff);
@@ -97,20 +98,74 @@ footer{
     margin-top: 40px;
 }
 
-.figuras{
+.figuras {
     font-size: 35px;
 }
 
-.items{
+.items {
     margin-bottom: 15px;
 }
 
-.items a{
+.items a {
     color: #fff;
     text-decoration: none;
     margin-right: 15px;
 }
 
-.items h5{
+.items h5 {
     font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .topo {
+        padding: 20px 10px;
+    }
+
+    .conteudo {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .figuras {
+        font-size: 28px;
+    }
+
+    .items h5 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .figuras {
+        font-size: 24px;
+    }
+
+    .items a {
+        display: block;
+        margin-bottom: 10px;
+    }
 }

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('conexao.php');
 
 $db = Conexao::GetConexao();
@@ -14,7 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if($senha !== $senha_confirmar){
-    echo("As senhas não coicidem!");
+        $_SESSION['mensagem_erro'] = 'As senhas devem ser iguais!';
+        header('Location: ../cadastro.php');
+        exit();
     }
 
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
@@ -24,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $db->prepare($sql);
         $stmt->execute([':nome' => $nome, ':email' => $email, ':senha' => $senhaHash]);
 
-        header('location: /BeatSense/src/login.php');       
+        header('location: /BeatSense/src/loginpage.php');       
         exit();
 
     } catch (PDOException $e) {

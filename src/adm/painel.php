@@ -1,10 +1,6 @@
 <?php
 include('protect_adm.php');
 include('CRUD.php');
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'adm') {
-    header("Location: ../index.php");
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,9 +13,114 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'adm') {
         #button{
             margin-right: 15px;
         }
+
+        #message-error{
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f8d1d4;
+            color: #5c1518;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        #message-success{
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #d1e6f8;
+            color: #15345c;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        #message-update{
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #d1f8e3;
+            color: #155c34;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        #message-delete{
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #5c1518;
+            color: #f8d1d4;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                top: 20px;
+            }
+            to {
+                opacity: 1;
+                top: 35px;
+            }
+        }
     </style>
 </head>
 <body class="container mt-4">
+<?php
+// Mensagem de erro
+if (isset($_SESSION['message-error'])) {
+    echo '<div id="message-error">' . $_SESSION['message-error'] . '</div>';
+    unset($_SESSION['message-error']);
+
+// Mensagem de cadastro
+} elseif (isset($_SESSION['message-user-success'])) {
+    echo '<div id="message-success">' . $_SESSION['message-user-success'] . '</div>';
+    unset($_SESSION['message-user-success']);
+
+// Mensagem de atualização
+} elseif (isset($_SESSION['message-update'])) {
+    echo '<div id="message-update">' . $_SESSION['message-update'] . '</div>';
+    unset($_SESSION['message-update']);
+
+// Mensagem de exclusão
+} elseif (isset($_SESSION['message-delete'])) {
+    echo '<div id="message-delete">' . $_SESSION['message-delete'] . '</div>';
+    unset($_SESSION['message-delete']);
+}
+?>
 
     <h2 class="mb-4">Gerenciamento de Usuários</h2>
 
@@ -73,6 +174,6 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'adm') {
     <a href="../servers/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
     
     <script src="../bootstrap-5.3.0-dist/bootstrap/js/painel.js"></script>
-
+    <script src="../bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
 </body>
 </html>
