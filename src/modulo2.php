@@ -42,7 +42,7 @@
     <section class="card">
       <h2>🧮 Fórmula de Compasso Simples</h2>
       <p>Os compassos binarios (\( \frac{2}{2} \)) ou (\( \frac{2}{4} \)), ternários (\( \frac{3}{4} \)) e quarternários (\( \frac{4}{4} \)), são indicados no primeiro compasso, o número de cima indica quantos tempos há no compasso e o número de baixo qual a figura que representa um tempo no campasso (Unidade de Tempo U.T.).  
-      Exemplo: <strong>\( \frac{4}{4} \)</strong> = 4 tempos por compasso (indicado pelo número superior), cada um com duração de uma semínima. <br><strong>Obs:</strong> O número 4 representa a semínima como visto no módulo anterior</p>
+      Exemplo: <strong>\( \frac{4}{4} \)</strong> = 4 tempos por compasso (indicado pelo número superior), cada um com duração de uma semínima. <br><strong>Obs:</strong> O número 4 representa a semínima como visto no módulo anterior.</p>
     </section>
 
     <section class="card">
@@ -78,21 +78,21 @@
         <button class="clave-btn" onclick="toggleInfo('sol')"><span class="icon-clef">𝄞</span> Clave de Sol</button>
         <div id="sol" class="clave-info">
           <p>Fixa a nota Sol na 2ª linha. Usada para voz principal e secundária.  
-          <br><strong>Exemplos de instrumentos::</strong> Violinos, Sax Contraltos, Flautas.</p>
+          <br><strong>Exemplos de instrumentos:</strong> Violinos, Sax Contraltos, Flautas.</p>
           <img src="img/Clave de Sol.jpg" class="clave-img" alt="Imagem da Clave de Sol">
         </div>
     
         <button class="clave-btn" onclick="toggleInfo('fa')"><span class="icon-clef">𝄢</span> Clave de Fá</button>
         <div id="fa" class="clave-info">
           <p>Fixa a nota Fá na 4ª linha. Usada para vozes graves. 
-          <br><strong>Exemplos de instrumentos:</strong> Violoncelos, Contrabaixos, Fagotes.</p>
+          <br><strong>Exemplos de instrumentos:</strong> Violoncelos, Contrabaixos, Tubas.</p>
           <img src="img/Clave de fá.jpg" alt="Imagem da Clave de Fá">
         </div>
     
         <button class="clave-btn" onclick="toggleInfo('do')"><span class="icon-clef">𝄡</span> Clave de Dó</button>
         <div id="do" class="clave-info">
           <p>Fixa a nota Dó na 3ª linha. Usada para vozes de acompanhamento.
-          <br><strong>Exemplos de instrumentos:</strong> Viola, Trombone Tenor.</p>
+          <br><strong>Exemplos de instrumentos:</strong> Viola, Trombone.</p>
           <img src="img/Clave de do.jpg" alt="Imagem da Clave de Dó">
         </div>
       </div>

@@ -165,7 +165,7 @@ session_start();
                     <img src="img/Módulo 2.webp" class="card-img-top" alt="Módulo 2">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #2ecc71; ">Módulo 2</h5>
-                        <p class="card-text">Conheça as escalas maiores e menores e como elas são utilizadas.</p>
+                        <p class="card-text">Explore compassos, fórmulas, claves, notas e a estrutura do pentagrama.</p>
                     </div>
                 </div>
                 </a>
