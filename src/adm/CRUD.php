@@ -45,6 +45,13 @@ if (isset($_GET["deletar"])) {
 }
 
 //Buscar usuarios
-$usuarios = $db->query('SELECT * FROM usuarios');
-
+if (isset($_GET['pesquisar']) && !empty(trim($_GET['pesquisar']))) {
+    $termo = '%' . trim($_GET['pesquisar']) . '%';
+    $stmt = $db->prepare("SELECT * FROM usuarios WHERE nome LIKE ? OR email LIKE ?");
+    $stmt->execute([$termo, $termo]);
+    $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    $stmt = $db->query("SELECT * FROM usuarios");
+    $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>

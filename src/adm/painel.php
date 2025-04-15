@@ -10,10 +10,6 @@ include('CRUD.php');
     <title>BeatSense - PAINEL ADM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        #button{
-            margin-right: 15px;
-        }
-
         #message-error{
             position: fixed;
             top: 35px;
@@ -96,6 +92,10 @@ include('CRUD.php');
                 top: 35px;
             }
         }
+
+        .botoes{
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body class="container mt-4">
@@ -146,6 +146,16 @@ if (isset($_SESSION['message-error'])) {
         <button type="submit" name="adicionar" id="btnSalvar" class="btn btn-primary">Adicionar</button>
     </form>
 
+    <div class="botoes">
+        <a href="../index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
+        <a href="../servers/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
+    </div>
+
+    <form method="GET" class="mb-3" id="search">
+        <label for="search-user">Pesquisar Usuário:</label>
+        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= isset($_GET['pesquisar']) ? htmlspecialchars($_GET['pesquisar']) : '' ?>">
+    </form>
+
     
     <table class="table table-bordered">
         <thead>
@@ -170,8 +180,6 @@ if (isset($_SESSION['message-error'])) {
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="../index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
-    <a href="../servers/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
     
     <script src="../bootstrap-5.3.0-dist/bootstrap/js/painel.js"></script>
     <script src="../bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
