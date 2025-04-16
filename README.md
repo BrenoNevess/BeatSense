@@ -13,6 +13,13 @@
 - **Cadastro de Usuários**: Tela para novos usuários se cadastrarem no sistema.
 - **Painel Administrativo**: Exclusivo para o administrador, com funcionalidades de CRUD (Criar, Ler, Atualizar, Deletar) para gerenciar os usuários cadastrados.
 
+## Detalhes do Painel Administrativo
+
+- **Login do Administrador:**
+- **Email:** brenoadm@gmail.com
+- **Senha:** Neves7
+- **CRUD de Usuários:** O administrador pode adicionar, editar e excluir usuários cadastrados.
+
 ## Tecnologias Utilizadas
 
 - **Front-End**: HTML, CSS (com Bootstrap), JavaScript
@@ -78,29 +85,13 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 
 ## Estrutura do Projeto
 
-- `/public`: Contém os arquivos públicos do site, como HTML, CSS e JavaScript.
-- `/admin`: Contém as funcionalidades administrativas, incluindo o CRUD de usuários e o login do administrador.
-- `/database`: Arquivos relacionados ao banco de dados (como o script SQL).
-- `/config`: Arquivos de configuração, incluindo a conexão com o banco de dados.
+- `/src`: Contém os arquivos públicos do site, como HTML, CSS e JavaScript.
+- `/adm`: Contém as funcionalidades administrativas, incluindo o CRUD de usuários e o painel de admin e arquivos relacionado ao banco de dados.
+- `/servers`: Arquivos de configuração, incluindo a conexão com o banco de dados.
 
 ## Contribuição
 
-Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga os passos abaixo:
-
-1. Faça um fork deste repositório.
-2. Crie uma nova branch para a sua feature:
-   ```bash
-   git checkout -b feature/nome-da-feature
-   ```
-3. Faça as suas modificações e envie para o repositório:
-   ```bash
-   git commit -am 'Adiciona nova funcionalidade'
-   ```
-4. Envie a branch para o repositório remoto:
-   ```bash
-   git push origin feature/nome-da-feature
-   ```
-5. Abra um Pull Request.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
 ## Licença
 
