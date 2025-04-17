@@ -151,6 +151,11 @@ footer {
     list-style: none;
 }
 
+#info.ativo {
+    opacity: 1;
+    max-height: 500px;
+}
+
 #infos.ativo {
     opacity: 1;
     max-height: 500px;

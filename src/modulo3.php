@@ -43,18 +43,17 @@
     <section class="card">
       <h2>🗣️ Vozes e Harmonia</h2>
       <div class="linha-botao-texto">
-        <button class="info-button" onclick="toggleInfos()">⬇</button>
         <p>Clique no botão para entender como as diferentes vozes se organizam na harmonia musical.</p>
+        <button class="info-button" onclick="toggleInfoVozes()">⬇</button>
       </div>
-      <ul id="infos" class="img-info">
+      <ul id="info" class="img-info">
         <img src="img/vozes.jpg" alt="Vozes e Claves">
-        <li><strong style="color: #db75db;">🎻 Soprano:</strong> Voz mais aguda. Representa a melodia principal nas partituras. Instrumentos que assumem essa voz: <strong>violino, flauta, etc.</strong></li>
+        <li><strong style="color: #db75db;">🎻 Soprano:</strong> Voz mais aguda. Representa a melodia principal nas partituras. Instrumentos: <strong>violino, flauta, etc.</strong></li>
         <li><strong style="color: #da8921;">🎷 Contralto:</strong> Voz feminina grave. Serve de apoio à melodia principal e adiciona profundidade. Instrumentos: <strong>saxofone alto, viola,</strong> etc.</li>
         <li><strong style="color: #19a83d;">🎺 Tenor:</strong> Voz masculina aguda. Conecta as vozes superiores às graves. Instrumentos: <strong>clarinete, trompete,</strong> etc.</li>
         <li><strong style="color: #1e2583;">🎸 Baixo:</strong> A voz mais grave. Dá sustentação e base para a harmonia. Instrumentos: <strong>contrabaixo, tuba, violoncelo,</strong> etc.</li>
       </ul>
     </section>
-
 
     <section class="card">
       <h2>♯♭ Sinais de Alteração</h2>
@@ -70,14 +69,13 @@
         <img class="card-img" src="img/dobradobemol.jpg" alt="Dobrado Bemol">
         <li><strong>Bequadro (♮):</strong> Cancela qualquer alteração anterior, retornando a nota ao seu estado natural. Exemplo: se uma nota foi alterada com um sustenido, o bequadro a devolve ao seu tom original e a alteração vale para toda a nota igual dentro de um compasso.</li>
         <img class="card-img" src="img/bequadro.jpg" alt="Bequadro">
-
       </ul>
     </section>
 
     <section class="card">
       <h2>𝄐 Fermata</h2>
       <p>A <strong>fermata</strong> é um símbolo que indica que a nota ou pausa deve ser prolongada além do seu valor original. O tempo de prolongamento é deixado a critério do músico ou regente, criando uma pausa dramática que dá ênfase à nota ou pausa, antes de continuar com a música.</p>
-      <button class="info" onclick="toggleInfos()">⬇</button>
+      <button class="info" onclick="toggleInfoFermata()">⬇</button>
       <div id="infos" class="img-info">
         <img class="card-img" src="img/fermata.jpg" alt="fermata">
       </div>
@@ -99,12 +97,18 @@
     </div>
   </footer>
   <script>
+    
     function toggleExemplo() {
       const exemplo = document.getElementById("exemplo");
       exemplo.classList.toggle("ativo");
     }
 
-    function toggleInfos() {
+    function toggleInfoVozes() {
+      const infos = document.getElementById("info");
+      infos.classList.toggle("ativo");
+    }
+
+    function toggleInfoFermata() {
       const infos = document.getElementById("infos");
       infos.classList.toggle("ativo");
     }
