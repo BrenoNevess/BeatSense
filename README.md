@@ -102,4 +102,3 @@ Este projeto está licenciado sob a MIT License.
 Desenvolvido por **Breno Neves**. Caso tenha dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
 - **E-mail**: brenoadm@gmail.com
-
