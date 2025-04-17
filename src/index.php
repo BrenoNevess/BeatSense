@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -173,10 +171,10 @@ session_start();
             <div class="col-md-4">
                 <a href="modulo3.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
-                    <img src="https://source.unsplash.com/400x300/?music,rhythm" class="card-img-top" alt="Ritmo e Compassos">
+                    <img src="img/modulo 3.jpg" class="card-img-top" alt="Ritmo e Compassos">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #f39c12;">Módulo 3</h5>
-                        <p class="card-text">Aprenda sobre tempos, compassos e como contar corretamente.</p>
+                        <p class="card-text">Intervalos, melodia, harmonia, vozes e sinais musicais, entenda a base da expressão musical.</p>
                     </div>
                 </div>
                 </a>

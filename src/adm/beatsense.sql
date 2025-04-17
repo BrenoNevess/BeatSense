@@ -61,8 +61,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `criado_em`) VALUES
-(1, 'Alana', 'tsukisayora@gmail.com', '$2y$10$uu1.M7pgVpU5OJsV3Nem2O1BKSXfgQLb.sm98lp4UpbxROSZZEeNS', '2025-04-02 22:22:04'),
-(2, 'Breno', 'breno@gmail.com', '$2y$10$45q1qnccx0tFu1e/u4DsdefjNzMAunncSXrxTmaKYLWHLJxZk752i', '2025-04-02 22:22:24');
+(1, 'Breno', 'breno@gmail.com', '$2y$10$45q1qnccx0tFu1e/u4DsdefjNzMAunncSXrxTmaKYLWHLJxZk752i', '2025-04-02 22:22:24');
 
 --
 -- Indexes for dumped tables

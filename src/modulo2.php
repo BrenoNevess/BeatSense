@@ -99,20 +99,20 @@
     </section>
   </main>
 
-  <footer>
-        <div class="items">
-            <h5 class="items">BeatSense</h5>
-            <p class="items">Aprenda teoria musical de forma fácil e acessível.</p>
-            
-            <div class="items">
-                <a href="index.php#teoria">Teoria Musical</a>
-                <a href="index.php#sobre">Sobre</a>
-                <a href="index.php#contato">Contato</a>
-            </div>
-    
-            <p class="items">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+<footer>
+  <div class="items">
+      <h5 class="items">BeatSense</h5>
+      <p class="items">Aprenda teoria musical de forma fácil e acessível.</p>
+      
+      <div class="items">
+          <a href="index.php#teoria">Teoria Musical</a>
+          <a href="index.php#sobre">Sobre</a>
+          <a href="index.php#contato">Contato</a>
+      </div>
+
+      <p class="items">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
+  </div>
+</footer>
 
     <script>
       function toggleInfo(id) {
@@ -125,5 +125,6 @@
         suplementar.style.display = suplementar.style.display === 'block' ? 'none' : 'block';
       }
     </script>
+    
 </body>
 </html>
