@@ -97,6 +97,25 @@
             width: 100%;
             height: 240px;
         }
+
+        @media(max-width: 768px){
+            .card-img-top{
+                max-width: 515px;
+                width: 100%;
+                height: 240px;
+            }
+
+            .col-md-4{
+                display: flex;
+                max-width: 475px;
+                margin: auto;
+            }
+
+            .row{
+                display: grid;
+                gap:20px;
+            }
+        }
     </style>
 </head>
 <body>

@@ -10,6 +10,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    @media(max-width:480px){
+      .card{
+        max-width: 100%;
+      }
+    }
+
+    @media(max-width: 768px){
+      .card{
+        max-width: 100%;
+      }
+
+      ul img{
+        max-width: 400px;
+      }
+    }
+
+    @media(max-width:1024){
+      .card{
+        max-width: 100%px;
+      }
+    }
+  </style>
 </head>
 <body class="modulo-laranja">
   <header class="topo">
