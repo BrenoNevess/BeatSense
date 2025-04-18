@@ -25,9 +25,12 @@ if (isset($_POST["editar"])) {
     $id = $_POST["id"];
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    
-    $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ? WHERE id = ?");
-    if ($stmt->execute([$nome, $email, $id])) {
+    $senha = $_POST["senha"];
+
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+    $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
+    if ($stmt->execute([$nome, $email, $senhaHash, $id])) {
         $_SESSION['message-update'] = 'Usuário atualizado com sucesso!';
     }
 }

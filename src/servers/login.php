@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }    
 
-        // Verificar se é um usuário comum
+        // Verificar se é um usuário
         $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     } catch (PDOException $e) {
-        echo "Erro no login: " . $e->getMessage();
+        echo "Erro ao fazer login: " . $e->getMessage();
     }
 }
 ?>
