@@ -209,7 +209,7 @@
             <div class="d-flex justify-content-center mb-3">
                 <a href="#teoria" class="text-light text-decoration-none mx-3">Teoria Musical</a>
                 <a href="#sobre" class="text-light text-decoration-none mx-3">Sobre</a>
-                <a href="#contato" class="text-light text-decoration-none mx-3">Contato</a>
+                <a href="https://www.linkedin.com/in/breno-neves-2b30a5360/" class="text-light text-decoration-none mx-3">Contato</a>
             </div>
     
             <p class="mb-0">&copy; 2025 BeatSense. Todos os direitos reservados.</p>

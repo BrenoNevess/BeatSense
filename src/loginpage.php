@@ -31,6 +31,24 @@ include('servers/login.php');
             animation: aparecer 0.5s ease-out;
         }
 
+        #cadastrado-com-sucesso{
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #d1f8e3;
+            color: #155c34;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
         @keyframes aparecer {
             from {
                 opacity: 0;
@@ -54,6 +72,13 @@ include('servers/login.php');
         </div>
         <?php unset($_SESSION['mensagem_erro']); ?>
     <?php endif; ?>
+
+    <?php if(isset($_SESSION['cadastrado-com-sucesso'])): ?>
+        <div id="cadastrado-com-sucesso">
+            <?= $_SESSION['cadastrado-com-sucesso']; ?>
+        </div>
+        <?php unset($_SESSION['cadastrado-com-sucesso']); ?>
+    <?php endif?>
 
     <div class="caixa-login">
         <div class="login">

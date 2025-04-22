@@ -15,4 +15,5 @@ window.addEventListener('DOMContentLoaded', () => {
     escondermsg('message-success', 3000);
     escondermsg('message-update', 3000);
     escondermsg('message-delete', 3000);
+    escondermsg('cadastrado-com-sucesso', 2500);
 });

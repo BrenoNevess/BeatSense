@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if($senha !== $senha_confirmar){
-        $_SESSION['mensagem_erro'] = 'As senhas devem ser iguais!';
+        $_SESSION['mensagem_erro'] = 'Certifique-se de que ambas as senhas sejam iguais.';
         header('Location: ../cadastro.php');
         exit();
     }
@@ -26,7 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
         $stmt = $db->prepare($sql);
         $stmt->execute([':nome' => $nome, ':email' => $email, ':senha' => $senhaHash]);
-
+        
+        $_SESSION['cadastrado-com-sucesso'] = 'Usuário cadastrado com sucesso!';
+        
         header('location: /BeatSense/src/loginpage.php');       
         exit();
 
