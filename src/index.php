@@ -98,6 +98,10 @@
             height: 240px;
         }
 
+        .col-md-4{
+            margin-top: 20px;
+        }
+
         @media(max-width: 768px){
             .card-img-top{
                 max-width: 515px;
@@ -136,7 +140,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link text-light" href="#teoria">Teoria Musical</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="https://www.linkedin.com/in/breno-neves-2b30a5360/">Contato</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
                     <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="servers/logout.php">Encerrar Sessão</a></li>
                     <?php else: ?>
@@ -194,6 +198,39 @@
                     <div class="card-body">
                         <h5 class="card-title" style="color: #f39c12;">Módulo 3</h5>
                         <p class="card-text">Intervalos, melodia, harmonia, vozes e sinais musicais, entenda a base da expressão musical.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                <div class="card shadow-sm">
+                    <img src="img/manutenção.jpg" class="card-img-top" alt="Em Manutenção">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #acacac;">Módulo 4</h5>
+                        <p class="card-text">Em breve, em novas atualizações.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                <div class="card shadow-sm">
+                    <img src="img/manutenção.jpg" class="card-img-top" alt="Em Manutenção">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #acacac;">Módulo 5</h5>
+                        <p class="card-text">Em breve, em novas atualizações.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                <div class="card shadow-sm">
+                    <img src="img/manutenção.jpg" class="card-img-top" alt="Em Manutenção">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #acacac;">Módulo 6</h5>
+                        <p class="card-text">Em breve, em novas atualizações.</p>
                     </div>
                 </div>
                 </a>
