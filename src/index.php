@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include('servers/conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -129,11 +130,9 @@ session_start();
             left: 50%;
             transform: translate(-50%, -50%);
             width: 250px;
-            height: 135px;
+            height: 155px;
             background-color: #dedede;
-            color: white;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
             border-radius: 8px;
             z-index: 999;
             color: #000;
@@ -141,6 +140,8 @@ session_start();
 
         .content-confirm{
             text-align: center;
+            padding: 10px;
+            color: #000;
         }
 
         .content-confirm button {
@@ -148,10 +149,9 @@ session_start();
             max-width: 70px;
             width: 100%;
             border: none;
-            align-items: center;
-            justify-content: center;
             margin-top: 10px;
         }
+
 
         .button-no{
             background-color: #6fa7e2;
@@ -164,6 +164,35 @@ session_start();
             background-color: #c46666;
             color: #000;
             font-weight: 500;
+        }
+
+        #AccExclude{
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #5c1518;
+            color: #f8d1d4;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                top: 20px;
+            }
+            to {
+                opacity: 1;
+                top: 35px;
+            }
         }
 
         @media(max-width: 768px){
@@ -193,7 +222,7 @@ session_start();
         </div>
         <?php unset($_SESSION['mensagem_erro']); ?>
     <?php endif; ?>
-
+    
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #007FFF;">
         <div class="container">
             <a class="navbar-brand titulo" href="index.php"><h1 class="titulo">BeatSense</h1></a>
@@ -230,11 +259,20 @@ session_start();
         oferecendo materiais educativos que simplificam o aprendizado e ajudam você a desenvolver seus conhecimentos musicais.</p>
     </div>
 
+    <div id="overlay" style="
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 998;">
+    </div>
+
     <div class="box-confirm" id="Open">
         <div class="content-confirm">
-            <p>Tem certeza de que deseja excluir sua conta?</p>
-            <button class="button-yes" onclick="ConfirmConfirm()">Sim</button>
-            <button class="button-no"  onclick="CloseConfirm()">Não</button>
+            <p>Tem certeza de que deseja excluir sua conta? Esta ação não poderá ser desfeita.</p>
+            <button type="submit" class="button-yes" id="deletar"  onclick="ConfirmConfirm()">Sim</button>
+            <button class="button-no" onclick="CloseConfirm()">Não</button>
         </div>
     </div>
 
