@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -73,6 +75,17 @@
         #sessao:hover{
             background-color: #0c66c5;
         }
+
+        #excluir-conta{
+            border: 1px solid #fff;
+            border-radius: 10px;
+            background-color:#b30000;
+            font-weight: 600;
+        }
+
+        #excluir-conta:hover{
+            background-color:#c50c0c;
+        }
         
         .nav-item{
             font-weight: 600;
@@ -102,6 +115,57 @@
             margin-top: 20px;
         }
 
+        .msg-confirm{
+            display: flex;
+
+        }
+        
+        .box-confirm {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 135px;
+            background-color: #dedede;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            z-index: 999;
+            color: #000;
+        }
+
+        .content-confirm{
+            text-align: center;
+        }
+
+        .content-confirm button {
+            border-radius: 7px;
+            max-width: 70px;
+            width: 100%;
+            border: none;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .button-no{
+            background-color: #6fa7e2;
+            color: #000;
+            font-weight: 500;
+            margin-left: 25px;
+        }
+
+        .button-yes{
+            background-color: #c46666;
+            color: #000;
+            font-weight: 500;
+        }
+
         @media(max-width: 768px){
             .card-img-top{
                 max-width: 515px;
@@ -122,7 +186,7 @@
         }
     </style>
 </head>
-<body>
+<body id="Behind">
     <?php if (isset($_SESSION['mensagem_erro'])): ?>
         <div id="mensagem-login" class="alert alert-danger text-center position-fixed start-50 translate-middle-x shadow" style="top: 40px; z-index: 9999; width: 100%; max-width: 450px;">
             <?= $_SESSION['mensagem_erro']; ?>
@@ -142,19 +206,19 @@
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="https://www.linkedin.com/in/breno-neves-2b30a5360/">Contato</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
-                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="servers/logout.php">Encerrar Sessão</a></li>
+                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="servers/logout.php">Encerrar Sessão</a></li>
+                        <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
                     <?php else: ?>
-                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
+                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
                     <?php endif; ?>
 
                     <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'):?>
                     <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="adm/painel.php">Painel ADM</a></li>
                     <?php endif;?>
-              
             </div>
         </div>
     </nav>
-
+    
     <div class="hero-section">
         <h2>Aprenda Teoria Musical de Forma Simples</h2>
     </div>
@@ -164,6 +228,14 @@
         <p class="lead">O <strong>BeatSense</strong> é um site dedicado ao ensino de teoria musical de forma acessível e prática. 
         Criado para auxiliar músicos iniciantes e membros da Congregação Cristã no Brasil, 
         oferecendo materiais educativos que simplificam o aprendizado e ajudam você a desenvolver seus conhecimentos musicais.</p>
+    </div>
+
+    <div class="box-confirm" id="Open">
+        <div class="content-confirm">
+            <p>Tem certeza de que deseja excluir sua conta?</p>
+            <button class="button-yes" onclick="ConfirmConfirm()">Sim</button>
+            <button class="button-no"  onclick="CloseConfirm()">Não</button>
+        </div>
     </div>
 
     <div class="container mt-5" id="teoria">
@@ -248,10 +320,11 @@
                 <a href="#sobre" class="text-light text-decoration-none mx-3">Sobre</a>
                 <a href="https://www.linkedin.com/in/breno-neves-2b30a5360/" class="text-light text-decoration-none mx-3">Contato</a>
             </div>
-    
+
             <p class="mb-0">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
         </div>
     </footer>
     <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
+    <script src="bootstrap-5.3.0-dist/bootstrap/js/WindowConfirm.js"></script>
 </body> 
 </html>
