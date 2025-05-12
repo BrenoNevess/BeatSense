@@ -147,8 +147,8 @@ if (isset($_SESSION['message-error'])) {
     </form>
 
     <div class="botoes">
-        <a href="../index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
-        <a href="../servers/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
+        <a href="index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
+        <a href="Controller/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
     </div>
 
     <form method="GET" class="mb-3" id="search">
