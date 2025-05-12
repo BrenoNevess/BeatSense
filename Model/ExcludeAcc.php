@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../adm/CRUD.php");
+include("CRUD.php");
 $db = Conexao::GetConexao();
 
 if (!isset($_SESSION['usuario_id'])) {

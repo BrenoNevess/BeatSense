@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $_SESSION['cadastrado-com-sucesso'] = 'Usuário cadastrado com sucesso!';
         
-        header('location: /BeatSense/src/loginpage.php');       
+        header('location: ../loginpage.php');       
         exit();
 
     } catch (PDOException $e) {

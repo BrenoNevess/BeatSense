@@ -9,5 +9,5 @@ function CloseConfirm() {
 }
 
 function ConfirmConfirm(){
-   window.location.href = 'http://localhost/BeatSense/src/servers/ExcludeAcc.php';
+   window.location.href = 'http://localhost/BeatSense/Model/ExcludeAcc.php';
 }

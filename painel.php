@@ -1,6 +1,6 @@
 <?php
-include('protect_adm.php');
-include('CRUD.php');
+include('Controller/protect_adm.php');
+include('Model/CRUD.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,7 +8,7 @@ include('CRUD.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatSense - PAINEL ADM</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         #message-error{
             position: fixed;
@@ -181,7 +181,7 @@ if (isset($_SESSION['message-error'])) {
         </tbody>
     </table>
     
-    <script src="../bootstrap-5.3.0-dist/bootstrap/js/painel.js"></script>
-    <script src="../bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
+    <script src="bootstrap/js/painel.js"></script>
+    <script src="bootstrap/js/alert.js"></script>
 </body>
 </html>

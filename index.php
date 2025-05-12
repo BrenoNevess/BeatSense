@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include('servers/conexao.php');
+include('Controller/conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +12,8 @@ include('servers/conexao.php');
     <meta name="description" content="BeatSense é um site voltado para ensinar a teoria musical, com ele o músico aprenderá os os fundamentos musicais">
     <meta name="keywords" content="BeatSense, teoria musical, música, ritmo, figuras musicais, som, timbre, altura, intensidade, duração, aprendizado musical, educação musical, leitura musical, notas musicais, pausas musicais, fundamentos da música, ensino de música, conteúdo musical interativo, site educativo, acessibilidade na música, música para iniciantes, teoria musical para iniciantes, Congregação Cristã no Brasil, música CCB, jovens músicos, leitura de partituras, símbolos musicais, curso de teoria musical gratuito">
     <title>BeatSense - Ensino de Música</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <style>
         @font-face {
             font-family: 'Quantum';
@@ -80,12 +80,7 @@ include('servers/conexao.php');
         #excluir-conta{
             border: 1px solid #fff;
             border-radius: 10px;
-            background-color:#b30000;
             font-weight: 600;
-        }
-
-        #excluir-conta:hover{
-            background-color:#c50c0c;
         }
         
         .nav-item{
@@ -235,14 +230,14 @@ include('servers/conexao.php');
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="https://www.linkedin.com/in/breno-neves-2b30a5360/">Contato</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
-                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="servers/logout.php">Encerrar Sessão</a></li>
+                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="Controller/logout.php">Encerrar Sessão</a></li>
                         <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
                     <?php else: ?>
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
                     <?php endif; ?>
 
                     <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'):?>
-                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="adm/painel.php">Painel ADM</a></li>
+                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="painel.php">Painel ADM</a></li>
                     <?php endif;?>
             </div>
         </div>
@@ -362,7 +357,7 @@ include('servers/conexao.php');
             <p class="mb-0">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
-    <script src="bootstrap-5.3.0-dist/bootstrap/js/WindowConfirm.js"></script>
+    <script src="bootstrap/js/alert.js"></script>
+    <script src="bootstrap/js/WindowConfirm.js"></script>
 </body> 
 </html>

@@ -1,5 +1,5 @@
 <?php 
-include('servers/login.php');
+include('Model/login.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -87,7 +87,7 @@ include('servers/login.php');
                 <h2> no BeatSense</h2>
             </div>
 
-            <form action="/BeatSense/src/servers/login.php" method="POST">
+            <form action="Model/login.php" method="POST">
 
                 <div class="space">
                     <div class="wrapper">
@@ -113,6 +113,6 @@ include('servers/login.php');
 
             </form>                               
         </div> 
-        <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
+        <script src="bootstrap/js/alert.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-include ('protect.php');
-include ('../servers/conexao.php');
+include ('Controller/protect.php');
+include ('conexao.php');
 $db = Conexao::GetConexao();
 
 // Adicionar usuario

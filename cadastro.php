@@ -1,5 +1,5 @@
 <?php 
-include("servers/cadastrar.php");
+include("Model/cadastrar.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,7 +9,7 @@ include("servers/cadastrar.php");
     <meta name="author" content="Breno Neves Nascimento">
     <meta name="description" content="Cadastrar seu e-mail no site">
     <meta name="keywords" content="cadastro, entrar, iniciar sessão">
-    <link rel="stylesheet" type="text/css" href="../src/styles/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="styles/cadastro.css">
     <title>Cadastrar-se no BeatSense</title>
     <style>
         #mensagem-login{
@@ -61,8 +61,8 @@ include("servers/cadastrar.php");
                         <h2>Bem-Vindo(a)</h2>
                         <h2>ao BeatSense</h2>
                     </div>
-                    
-                    <form action="/BeatSense/src/servers/cadastrar.php" method="POST">
+
+                    <form action="Model/cadastrar.php" method="POST">
 
                     <div class="input-group">
                         <div class="wrapper">
@@ -98,7 +98,7 @@ include("servers/cadastrar.php");
                             <span class="top--line"></span>
                             <span class="bottom-line"></span>
                         </div>
-                    </div>     
+                    </div>
 
                     <button type="submit" class="botao-cadastro">Cadastrar</button>
                         
@@ -107,6 +107,6 @@ include("servers/cadastrar.php");
                 </form>
             </div>
         </div>
-        <script src="bootstrap-5.3.0-dist/bootstrap/js/alert.js"></script>
+        <script src="bootstrap/js/alert.js"></script>
 </body>
 </html>
