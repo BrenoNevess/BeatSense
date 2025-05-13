@@ -230,7 +230,7 @@ include('Model/conexao.php');
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="https://www.linkedin.com/in/breno-neves-2b30a5360/">Contato</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
-                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="Controller/logout.php">Encerrar Sessão</a></li>
+                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" id="OpenL" onclick="OpenLogout()">Encerrar Sessão</a></li>
                         <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
                     <?php else: ?>
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
@@ -263,10 +263,18 @@ include('Model/conexao.php');
         z-index: 998;">
     </div>
 
+    <div class="box-confirm" id="OpenL">
+        <div class="content-confirm">
+            <p>Você tem certeza de que deseja sair da sua conta?</p>
+            <button type="submit" class="button-yes" onclick="ConfirmLogout()">Sim</button>
+            <button class="button-no" onclick="CloseLogout()">Não</button>
+        </div>
+    </div>
+
     <div class="box-confirm" id="Open">
         <div class="content-confirm">
             <p>Tem certeza de que deseja excluir sua conta? Esta ação não poderá ser desfeita.</p>
-            <button type="submit" class="button-yes" id="deletar"  onclick="ConfirmConfirm()">Sim</button>
+            <button type="submit" class="button-yes" onclick="ConfirmConfirm()">Sim</button>
             <button class="button-no" onclick="CloseConfirm()">Não</button>
         </div>
     </div>
