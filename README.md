@@ -85,9 +85,9 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 
 ## Estrutura do Projeto
 
-- `/src`: Contém os arquivos públicos do site, como HTML, CSS e JavaScript.
-- `/adm`: Contém as funcionalidades administrativas, incluindo o CRUD de usuários e o painel de admin e arquivos relacionado ao banco de dados.
-- `/servers`: Arquivos de configuração, incluindo a conexão com o banco de dados.
+- `/View`: Contém os arquivos públicos do site, como o index.php.
+- `/Model`: Contém as funcionalidades administrativas, incluindo o CRUD de usuários e arquivos relacionado ao banco de dados.
+- `/Controller`: Arquivos de controle como verificação de login de um ADM ou usuário comum.
 
 ## Contribuição
 
