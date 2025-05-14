@@ -133,6 +133,23 @@ include('Model/conexao.php');
             color: #000;
         }
 
+        .box-confirm-l {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 125px;
+            background-color: #dedede;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            border-radius: 8px;
+            z-index: 999;
+            color: #000;
+        }
+
         .content-confirm{
             text-align: center;
             padding: 10px;
@@ -156,9 +173,14 @@ include('Model/conexao.php');
         }
 
         .button-yes{
-            background-color: #c46666;
+            background-color: #dedede;
             color: #000;
             font-weight: 500;
+            transition: 0.5s;
+        }
+
+        .button-yes:hover{
+            background-color:#7f7f7f;
         }
 
         #AccExclude{
@@ -233,11 +255,11 @@ include('Model/conexao.php');
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" id="OpenL" onclick="OpenLogout()">Encerrar Sessão</a></li>
                         <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
                     <?php else: ?>
-                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="loginpage.php">Iniciar Sessão</a></li>
+                        <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="View/loginpage.php">Iniciar Sessão</a></li>
                     <?php endif; ?>
 
                     <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'):?>
-                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="painel.php">Painel ADM</a></li>
+                    <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="View/painel.php">Painel ADM</a></li>
                     <?php endif;?>
             </div>
         </div>
@@ -263,7 +285,7 @@ include('Model/conexao.php');
         z-index: 998;">
     </div>
 
-    <div class="box-confirm" id="OpenL">
+    <div class="box-confirm-l" id="OpenL">
         <div class="content-confirm">
             <p>Você tem certeza de que deseja sair da sua conta?</p>
             <button type="submit" class="button-yes" onclick="ConfirmLogout()">Sim</button>
@@ -283,7 +305,7 @@ include('Model/conexao.php');
         <h2 class="text-center mb-4">Fundamentos da Teoria Musical</h2>
         <div class="row">
             <div class="col-md-4">
-                <a href="modulo1.php" class="text-decoration-none text-dark">
+                <a href="View/modulo1.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
                     <img src="img/Módulo 1 2.0.webp" class="card-img-top" alt="Módulo 1">
                     <div class="card-body">
@@ -294,7 +316,7 @@ include('Model/conexao.php');
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="modulo2.php" class="text-decoration-none text-dark">
+                <a href="View/modulo2.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
                     <img src="img/Módulo 2.webp" class="card-img-top" alt="Módulo 2">
                     <div class="card-body">
@@ -305,7 +327,7 @@ include('Model/conexao.php');
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="modulo3.php" class="text-decoration-none text-dark">
+                <a href="View/modulo3.php" class="text-decoration-none text-dark">
                 <div class="card shadow-sm">
                     <img src="img/modulo 3.jpg" class="card-img-top" alt="Ritmo e Compassos">
                     <div class="card-body">

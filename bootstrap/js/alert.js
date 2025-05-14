@@ -10,10 +10,11 @@ function escondermsg(id, delay) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    escondermsg('mensagem-login', 5000);
-    escondermsg('message-error', 2000);
-    escondermsg('message-success', 3000);
-    escondermsg('message-update', 3000);
-    escondermsg('message-delete', 3000);
-    escondermsg('cadastrado-com-sucesso', 2500);
+    escondermsg('mensagem-login', 3000);
+    escondermsg('erro_senha', 3000);
+    escondermsg('message-success', 2000);
+    escondermsg('message-update', 2000);
+    escondermsg('message-delete', 2000);
+    escondermsg('cadastrado-com-sucesso', 2000);
+    escondermsg('erro_accExiste', 3000);
 });

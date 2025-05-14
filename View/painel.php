@@ -1,6 +1,35 @@
 <?php
-include('Controller/protect_adm.php');
-include('Model/CRUD.php');
+session_start();
+include('../Controller/protect_adm.php');
+include('../Model/CRUD.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['excluir_id'])) {
+        $idExcluir = intval($_POST['excluir_id']);
+        Usuario::deletarUsuario($idExcluir);
+        header("Location: painel.php");
+        exit;
+    }
+
+    $dados = [
+        "id" => $_POST["id"] ?? null,
+        "nome" => $_POST["nome"] ?? '',
+        "email" => $_POST["email"] ?? '',
+        "senha" => $_POST["senha"] ?? ''
+    ];
+
+    if (!empty($dados['id'])) {
+        Usuario::atualizarUsuario($dados);
+    } else {
+        Usuario::adicionarUsuario($dados);
+    }
+
+    header("Location: painel.php");
+    exit;
+}
+
+$termo = $_GET['pesquisar'] ?? null;
+$procurar = Usuario::buscar($termo);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,9 +37,27 @@ include('Model/CRUD.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatSense - PAINEL ADM</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        #message-error{
+        #erro_accExiste{
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f8d1d4;
+            color: #5c1518;
+            padding: 15px 20px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+            font-weight: 500;
+            animation: aparecer 0.5s ease-out;
+        }
+        
+        #message_error{
             position: fixed;
             top: 35px;
             left: 50%;
@@ -101,9 +148,9 @@ include('Model/CRUD.php');
 <body class="container mt-4">
 <?php
 // Mensagem de erro
-if (isset($_SESSION['message-error'])) {
-    echo '<div id="message-error">' . $_SESSION['message-error'] . '</div>';
-    unset($_SESSION['message-error']);
+if (isset($_SESSION['erro_accExiste'])) {
+    echo '<div id="erro_accExiste">' . $_SESSION['erro_accExiste'] . '</div>';
+    unset($_SESSION['erro_accExiste']);
 
 // Mensagem de cadastro
 } elseif (isset($_SESSION['message-user-success'])) {
@@ -125,7 +172,7 @@ if (isset($_SESSION['message-error'])) {
     <h2 class="mb-4">Gerenciamento de Usuários</h2>
 
     
-    <form method="POST" class="mb-4">
+    <form action="" method="POST" class="mb-4">
         <input type="hidden" name="id" id="id">
 
         <div class="mb-3">
@@ -147,13 +194,13 @@ if (isset($_SESSION['message-error'])) {
     </form>
 
     <div class="botoes">
-        <a href="index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
-        <a href="Controller/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
+        <a href="../index.php"><button id="button" class="btn btn-primary">Voltar</button></a>
+        <a href="../Controller/logout.php"><button class="btn btn-primary">Encerrar Sessão</button></a>
     </div>
 
     <form method="GET" class="mb-3" id="search">
         <label for="search-user">Pesquisar Usuário:</label>
-        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= isset($_GET['pesquisar']) ? htmlspecialchars($_GET['pesquisar']) : '' ?>">
+        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= htmlspecialchars($termo) ?>">
     </form>
 
     
@@ -167,21 +214,26 @@ if (isset($_SESSION['message-error'])) {
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($usuarios as $row) : ?>
+            <?php foreach ($procurar as $row) : ?>
                 <tr>
                     <td><?= $row["id"] ?></td>
                     <td><?= $row["nome"] ?></td>
                     <td><?= $row["email"] ?></td>
                     <td>
                         <button class="btn btn-warning btn-sm editar" data-id="<?= $row["id"] ?>" data-nome="<?= $row["nome"] ?>" data-email="<?= $row["email"] ?>">Editar</button>
-                        <a href="?deletar=<?= $row["id"] ?>" class="btn btn-danger btn-sm">Excluir</a>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="excluir_id" value="<?= $row['id'] ?>">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
+                        </form>
+
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
     
-    <script src="bootstrap/js/painel.js"></script>
-    <script src="bootstrap/js/alert.js"></script>
+    <script src="../bootstrap/js/painel.js"></script>
+    <script src="../bootstrap/js/alert.js"></script>
+    <script src="../bootstrap/js/WindowConfirm.js"></script>
 </body>
 </html>

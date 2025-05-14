@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexao.php');
+include('../Model/conexao.php');
 
 $db = Conexao::GetConexao();
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($admin && password_verify($senha, $admin['senha'])) {
             $_SESSION['user_type'] = 'adm';
             $_SESSION['adm_id'] = $admin['id'];
-            header('Location: ../painel.php');
+            header('Location: ../View/painel.php');
             exit();
         }    
 
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         else {
         $_SESSION['mensagem_erro'] = 'E-mail ou senha incorretos. Verifique suas credenciais.';
-        header('Location: /BeatSense/loginpage.php');
+        header('Location: ../View/loginpage.php');
         exit();
         }
 

@@ -1,11 +1,14 @@
-<?php include('adm/protect.php'); ?>
+<?php 
+include('../Controller/protect.php'); 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeatSense - Módulo 3</title>
-  <link rel="stylesheet" href="styles/modulo3.css">
+  <link rel="stylesheet" href="../styles/modulo3.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

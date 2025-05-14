@@ -1,5 +1,5 @@
 <?php 
-include('Model/login.php');
+include('../Controller/login.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +10,7 @@ include('Model/login.php');
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="../styles/login.css">
     <title>BeatSense - Login</title>
     <style>
         #mensagem-login{
@@ -63,7 +63,7 @@ include('Model/login.php');
 </head>
 <body>
     <div class="container">
-        <a class="titulo" href="index.php"><h1>BeatSense</h1></a>
+        <a class="titulo" href="../index.php"><h1>BeatSense</h1></a>
     </div>
 
     <?php if (isset($_SESSION['mensagem_erro'])): ?>
@@ -73,11 +73,11 @@ include('Model/login.php');
         <?php unset($_SESSION['mensagem_erro']); ?>
     <?php endif; ?>
 
-    <?php if(isset($_SESSION['cadastrado-com-sucesso'])): ?>
+    <?php if(isset($_SESSION['mensagem_sucesso'])): ?>
         <div id="cadastrado-com-sucesso">
-            <?= $_SESSION['cadastrado-com-sucesso']; ?>
+            <?= $_SESSION['mensagem_sucesso']; ?>
         </div>
-        <?php unset($_SESSION['cadastrado-com-sucesso']); ?>
+        <?php unset($_SESSION['mensagem_sucesso']); ?>
     <?php endif?>
 
     <div class="caixa-login">
@@ -87,7 +87,7 @@ include('Model/login.php');
                 <h2> no BeatSense</h2>
             </div>
 
-            <form action="Model/login.php" method="POST">
+            <form action="../Controller/login.php" method="POST">
 
                 <div class="space">
                     <div class="wrapper">
@@ -113,6 +113,6 @@ include('Model/login.php');
 
             </form>                               
         </div> 
-        <script src="bootstrap/js/alert.js"></script>
+        <script src="../bootstrap/js/alert.js"></script>
 </body>
 </html>

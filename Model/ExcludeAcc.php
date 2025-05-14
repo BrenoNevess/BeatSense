@@ -12,7 +12,7 @@ $id = $_SESSION['usuario_id'];
 $stmt = $db->prepare("DELETE FROM usuarios WHERE id = ?");
 if ($stmt->execute([$id])) {
     session_destroy();
-    header("Location: ../index.php");
+    header("Location: ../View/cadastro.php");
     exit();
 }
 ?>
