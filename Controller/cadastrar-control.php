@@ -30,6 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['mensagem_sucesso'] = 'Usuário cadastrado com sucesso!';
         header('Location: ../View/loginpage.php');
         exit;
+    } else {
+        $_SESSION['erro_accExiste'];
+        header('Location: ../View/cadastro.php');
     }
 }
 ?>
