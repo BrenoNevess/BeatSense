@@ -50,7 +50,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 3. **Importação do Banco de Dados**:
    - Abra o PHPMyAdmin através do painel de controle do XAMPP.
    - Crie um novo banco de dados com o nome `beatsense`.
-   - Importe o arquivo SQL localizado na pasta `/database` do repositório para criar as tabelas necessárias.
+   - Importe o arquivo SQL localizado na pasta `/Model` do repositório para criar as tabelas necessárias.
 
 4. **Configuração do Banco de Dados**:
    - Abra o arquivo `conexao.php` e ajuste as configurações de conexão com o banco de dados conforme o exemplo abaixo:
@@ -101,4 +101,4 @@ Este projeto está licenciado sob a MIT License.
 
 Desenvolvido por **Breno Neves**. Caso tenha dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
-- **E-mail**: brenoadm@gmail.com
+- **E-mail**: bbrenonevess@gmail.com
