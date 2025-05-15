@@ -261,6 +261,7 @@ include('Model/conexao.php');
                     <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'):?>
                     <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="View/painel.php">Painel ADM</a></li>
                     <?php endif;?>
+                </ul>
             </div>
         </div>
     </nav>
@@ -310,7 +311,7 @@ include('Model/conexao.php');
                     <img src="img/Módulo 1 2.0.webp" class="card-img-top" alt="Módulo 1">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #007FFF;">Módulo 1</h5>
-                        <p class="card-text">Entenda o que é música, como funciona o ritmo, conheça as propridades do som e as figuras musicais.</p>
+                        <p class="card-text">Entenda o que é música, como funciona o ritmo, conheça as propriedades do som e as figuras musicais.</p>
                     </div>
                 </div>
                 </a>

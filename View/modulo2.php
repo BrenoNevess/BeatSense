@@ -24,20 +24,20 @@ include('../Controller/protect.php');
     <section class="card">
       <h2>📏 O que é Compasso?</h2>
       <p>O compasso é a divisão do tempo musical em partes iguais, chamadas de tempos. Ele organiza a música e facilita a leitura rítmica, eles podem ser simples ou compostos, mas para não complicar, neste módulo iremos falar sobre o simples.</p>
-      <img class="campasso-img" src="img/compasso.jpg" alt="Compasso musical">
+      <img class="campasso-img" src="../img/compasso.jpg" alt="Compasso musical">
     </section>
 
     <section class="card">
       <h2>🚧 Tipos de Barras de Compasso</h2>
       <ul>
         <li><strong>Barra Simples:</strong> separa compassos normalmente.</li>
-        <img src="img/Barras_Simples.jpg" alt="Barra de compasso simples" class="card-img">
+        <img src="../img/Barras_Simples.jpg" alt="Barra de compasso simples" class="card-img">
         <li><strong>Barra Dupla:</strong> usada para separar periodos ou trechos da música</li>
-        <img src="img/Barra_Dupla.jpg" alt="Barra de compasso dupla" class="card-img">
+        <img src="../img/Barra_Dupla.jpg" alt="Barra de compasso dupla" class="card-img">
         <li><strong>Barra de Ritornello:</strong> usada para repetir trechos musicais.</li>
-        <img src="img/barra de ritornelo.png" alt="Barra de compasso ritornello" class="card-img">
+        <img src="../img/barra de ritornelo.png" alt="Barra de compasso ritornello" class="card-img">
         <li><strong>Barra Final:</strong> indica o fim da música.</li>
-        <img src="img/Barra Final.png" alt="Barra de compasso final" class="card-img">
+        <img src="../img/Barra Final.png" alt="Barra de compasso final" class="card-img">
       </ul>
     </section>
 
@@ -57,20 +57,20 @@ include('../Controller/protect.php');
       <h2>📋 O que é o Pentagrama?</h2>
       <p>O pentagrama (ou pauta musical) é um conjunto de cinco linhas e quatro espaços onde escrevemos as notas musicais.  
       A posição da nota (em uma linha ou espaço) indica sua altura (grave ou aguda).</p>
-      <img class="pentagrama" src="img/pentagrama.png" alt="Pentagrama ou pauta musical">
+      <img class="pentagrama" src="../img/pentagrama.png" alt="Pentagrama ou pauta musical">
     </section>
 
     <section class="card">
       <h2>➕ Linhas e Espaços Suplementares</h2>
       <p>Quando uma nota é muito aguda ou muito grave e ultrapassa os limites do pentagrama, usamos <strong>linhas e espaços suplementares</strong> para continuar representando essas notas corretamente. Clique no botão para visualizar exemplo:</p><button class="linhas" onclick="toggleInfo('suplementar')">⬇</button>
-      <div id="suplementar" class="content-div" style="display: none;"><img class="card-img" src="img/complementar.jpg" alt="Linhas suplementares"></div>
+      <div id="suplementar" class="content-div" style="display: none;"><img class="card-img" src="../img/complementar.jpg" alt="Linhas suplementares"></div>
     </section>
 
     <section class="card">
       <h2>🎵 Notas Musicais</h2>
       <p>Ao total temos 7 notas musicais, sendo elas: <strong>Dó, Ré, Mi, Fá, Sol, Lá e Si</strong>.  
       Elas são escritas nas linhas e espaços do pentagrama e seguem uma ordem fixa.</p>
-      <img src="img/Notas musicais.jpg" alt="Notas musicais">
+      <img src="../img/Notas musicais.jpg" alt="Notas musicais">
     </section>
 
     <section class="card">
@@ -81,21 +81,21 @@ include('../Controller/protect.php');
         <div id="sol" class="clave-info">
           <p>Fixa a nota Sol na 2ª linha. Usada para voz principal e secundária.  
           <br><strong>Exemplos de instrumentos:</strong> Violinos, Sax Contraltos, Flautas.</p>
-          <img src="img/Clave de Sol.jpg" class="clave-img" alt="Imagem da Clave de Sol">
+          <img src="../img/Clave de Sol.jpg" class="clave-img" alt="Imagem da Clave de Sol">
         </div>
     
         <button class="clave-btn" onclick="toggleInfo('fa')"><span class="icon-clef">𝄢</span> Clave de Fá</button>
         <div id="fa" class="clave-info">
           <p>Fixa a nota Fá na 4ª linha. Usada para vozes graves. 
           <br><strong>Exemplos de instrumentos:</strong> Violoncelos, Contrabaixos, Tubas.</p>
-          <img src="img/Clave de fá.jpg" alt="Imagem da Clave de Fá">
+          <img src="../img/Clave de fá.jpg" alt="Imagem da Clave de Fá">
         </div>
     
         <button class="clave-btn" onclick="toggleInfo('do')"><span class="icon-clef">𝄡</span> Clave de Dó</button>
         <div id="do" class="clave-info">
           <p>Fixa a nota Dó na 3ª linha. Usada para vozes de acompanhamento.
           <br><strong>Exemplos de instrumentos:</strong> Viola, Trombone.</p>
-          <img src="img/Clave de do.jpg" alt="Imagem da Clave de Dó">
+          <img src="../img/Clave de do.jpg" alt="Imagem da Clave de Dó">
         </div>
       </div>
     </section>
