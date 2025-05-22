@@ -85,7 +85,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 
 ## Estrutura do Projeto
 
-- `/View`: Contém os arquivos públicos do site, como o index.php.
+- `/View`: Contém os arquivos públicos do site que os usuários irão ter acesso.
 - `/Model`: Contém as funcionalidades administrativas, incluindo o CRUD de usuários e arquivos relacionado ao banco de dados.
 - `/Controller`: Arquivos de controle como verificação de login de um ADM ou usuário comum.
 
