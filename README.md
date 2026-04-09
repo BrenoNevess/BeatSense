@@ -1,6 +1,8 @@
 # BeatSense
 
 **BeatSense** é uma plataforma online de ensino de teoria musical, projetada para fornecer conteúdo acessível e interativo sobre música para iniciantes, com foco na Congregacão Cristã no Brasil. O projeto tem como objetivo ensinar teoria musical de forma simples, abordando conceitos como ritmo, melodia, harmonia, intervalos e muito mais.
+## Versão
+1.0.0
 
 ## Funcionalidades
 
