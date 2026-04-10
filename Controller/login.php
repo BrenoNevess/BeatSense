@@ -1,6 +1,7 @@
 <?php
+require_once '../Model/conexao.php';
 require_once '../src/LoginService.php';
-
+$db = Conexao::GetConexao();
 $resultado = autenticar($db, $email, $senha);
 
 if ($resultado['status']) {
