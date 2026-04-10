@@ -1,49 +1,20 @@
 <?php
-session_start();
-include('../Model/conexao.php');
+require_once '../src/LoginService.php';
 
-$db = Conexao::GetConexao();
+$resultado = autenticar($db, $email, $senha);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+if ($resultado['status']) {
 
-    try {
-        
-        // Verificar se é um adm
-        $stmt = $db->prepare("SELECT * FROM adm WHERE email = :email");
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
-        $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['user_type'] = $resultado['tipo'];
 
-        if ($admin && password_verify($senha, $admin['senha'])) {
-            $_SESSION['user_type'] = 'adm';
-            $_SESSION['adm_id'] = $admin['id'];
-            header('Location: ../View/painel.php');
-            exit();
-        }    
-
-        // Verificar se é um usuário
-        $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($usuario && password_verify($senha, $usuario['senha'])) { 
-            $_SESSION['user_type'] = 'usuario';
-            $_SESSION['usuario_id'] = $usuario['id'];
-            header('Location: ../index.php');
-            exit();
-        }
-
-        else {
-        $_SESSION['mensagem_erro'] = 'E-mail ou senha incorretos. Verifique suas credenciais.';
-        header('Location: ../View/loginpage.php');
-        exit();
-        }
-
-    } catch (PDOException $e) {
-        echo "Erro ao fazer login: " . $e->getMessage();
+    if ($resultado['tipo'] == 'adm') {
+        header('Location: ../View/painel.php');
+    } else {
+        header('Location: ../index.php');
     }
+
+} else {
+    $_SESSION['mensagem_erro'] = 'Erro no login';
+    header('Location: ../View/loginpage.php');
 }
 ?>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../Model/CRUD.php');
+require_once '../src/CadastroService.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -9,30 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'] ?? null;
     $senha_confirmar = $_POST['senha_confirmar'] ?? null;
 
-    if (!$nome || !$email || !$senha || !$senha_confirmar) {
-        header('Location: ../View/cadastro.php');
-        exit;
-    }
+    $resultado = cadastrarUsuario($nome, $email, $senha, $senha_confirmar);
 
-    if ($senha !== $senha_confirmar) {
-        $_SESSION['erro_senha'] = 'Certifique-se de que ambas as senhas sejam iguais.';
-        header('Location: ../View/cadastro.php');
-        exit;
-    }
-
-    $dados = [
-        'nome' => $nome,
-        'email' => $email,
-        'senha' => $senha
-    ];
-
-    if (Usuario::adicionarUsuario($dados)) {
+    if ($resultado['status']) {
         $_SESSION['mensagem_sucesso'] = 'Usuário cadastrado com sucesso!';
         header('Location: ../View/loginpage.php');
         exit;
     } else {
-        $_SESSION['erro_accExiste'];
+        $_SESSION['erro'] = $resultado['erro'];
         header('Location: ../View/cadastro.php');
+        exit;
     }
 }
-?>
