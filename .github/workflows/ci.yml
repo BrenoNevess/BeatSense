@@ -5,8 +5,7 @@ on:
     branches:
       - main
       - entrega-intermediaria
-
-pull_request:
+  pull_request:
     branches:
       - main
 
