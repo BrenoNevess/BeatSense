@@ -1,24 +1,31 @@
-name: CI
+name: BeatSense CI
 
 on:
   push:
+    branches:
+      - main
+      - entrega-intermediaria
   pull_request:
+    branches:
+      - main
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repositório
-        uses: actions/checkout@v3
 
-      - name: Instalar PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
+    - name: Clonar repositório
+      uses: actions/checkout@v4
 
-      - name: Instalar dependências
-        run: composer install
+    - name: Configurar PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2
 
-      - name: Rodar testes
-        run: vendor/bin/phpunit
+    - name: Instalar dependências
+      run: composer install
+
+    - name: Rodar testes
+      run: vendor/bin/phpunit tests
