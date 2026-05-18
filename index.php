@@ -251,6 +251,7 @@ include('Model/conexao.php');
                     <li class="nav-item"><a class="nav-link text-light" href="#teoria">Teoria Musical</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="https://www.linkedin.com/in/breno-neves-2b30a5360/">Contato</a></li>
+                    <li class="nav-item"><a href="api-musical.php" class="btn btn-warning">Explorador Musical</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" id="OpenL" onclick="OpenLogout()">Encerrar Sessão</a></li>
                         <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
