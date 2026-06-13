@@ -1,6 +1,6 @@
 <?php
 class Conexao {
-    private static $host="localhost:3307";
+    private static $host="localhost:3309";
     private static $username="root";
     private static $password="";
     private static $dbname="beatsense";

@@ -32,10 +32,17 @@ class Usuario {
         $id = $dados["id"];
         $nome = $dados["nome"];
         $email = $dados["email"];
-        $senhaHash = password_hash($dados["senha"], PASSWORD_DEFAULT);
 
-        $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
-        if ($stmt->execute([$nome, $email, $senhaHash, $id])) {
+        if (!empty($dados["senha"])) {
+            $senhaHash = password_hash($dados["senha"], PASSWORD_DEFAULT);
+            $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
+            $ok = $stmt->execute([$nome, $email, $senhaHash, $id]);
+        } else {
+            $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ? WHERE id = ?");
+            $ok = $stmt->execute([$nome, $email, $id]);
+        }
+
+        if ($ok) {
             $_SESSION['message-update'] = 'Usuário atualizado com sucesso!';
             return true;
         }
