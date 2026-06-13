@@ -5,7 +5,7 @@
 ## Versão
 1.0.0
 
-## 🚀 CI
+## CI
 O projeto utiliza GitHub Actions para integração contínua.
 
 A cada alteração no código:

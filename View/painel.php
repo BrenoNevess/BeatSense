@@ -200,7 +200,7 @@ if (isset($_SESSION['erro_accExiste'])) {
 
     <form method="GET" class="mb-3" id="search">
         <label for="search-user">Pesquisar Usuário:</label>
-        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= htmlspecialchars($termo) ?>">
+        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= htmlspecialchars($termo ?? '') ?>">
     </form>
 
     
@@ -216,11 +216,11 @@ if (isset($_SESSION['erro_accExiste'])) {
         <tbody>
             <?php foreach ($procurar as $row) : ?>
                 <tr>
-                    <td><?= $row["id"] ?></td>
-                    <td><?= $row["nome"] ?></td>
-                    <td><?= $row["email"] ?></td>
+                    <td><?= htmlspecialchars($row["id"]) ?></td>
+                    <td><?= htmlspecialchars($row["nome"]) ?></td>
+                    <td><?= htmlspecialchars($row["email"]) ?></td>
                     <td>
-                        <button class="btn btn-warning btn-sm editar" data-id="<?= $row["id"] ?>" data-nome="<?= $row["nome"] ?>" data-email="<?= $row["email"] ?>">Editar</button>
+                        <button class="btn btn-warning btn-sm editar" data-id="<?= htmlspecialchars($row["id"]) ?>" data-nome="<?= htmlspecialchars($row["nome"]) ?>" data-email="<?= htmlspecialchars($row["email"]) ?>">Editar</button>
                         <form method="POST" style="display:inline;">
                             <input type="hidden" name="excluir_id" value="<?= $row['id'] ?>">
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
