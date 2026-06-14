@@ -8,6 +8,7 @@ include('../Controller/protect.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeatSense - Módulo 2</title>
+  <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
   <link rel="stylesheet" href="../styles/modulo2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -15,6 +16,7 @@ include('../Controller/protect.php');
 </head>
 <body class="modulo-verde">
   <header class="topo">
+    <?php $themeToggleClass = 'theme-toggle--header'; include __DIR__ . '/partials/theme-toggle.php'; ?>
     <h1>Módulo 2 - Elementos da Escrita Musical</h1>
     <p>Explore compassos, fórmulas, claves, notas e a estrutura do pentagrama!</p>
   </header>
@@ -126,6 +128,6 @@ include('../Controller/protect.php');
         suplementar.style.display = suplementar.style.display === 'block' ? 'none' : 'block';
       }
     </script>
-    
+    <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 </body>
 </html>

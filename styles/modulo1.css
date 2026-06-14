@@ -7,13 +7,13 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background-color: #f2f8ff;
-    color: #1a355b;
-    transition: background-color 0.3s ease;
+    background-color: var(--mod-bg);
+    color: var(--mod-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .topo {
-    background: linear-gradient(to right, #003366, #3399ff);
+    background: linear-gradient(to right, var(--mod-header-start), var(--mod-header-end));
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -29,8 +29,8 @@ body {
 }
 
 .card {
-    background-color: white;
-    border-left: 6px solid #007bff;
+    background-color: var(--mod-card-bg);
+    border-left: 6px solid var(--mod-card-border);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -66,20 +66,20 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    background-color: #fff;
+    background-color: var(--mod-table-bg);
     border-radius: 8px;
     overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #cce0ff;
+    border: 1px solid var(--mod-table-border);
     padding: 12px;
     text-align: center;
 }
 
 th {
-    background-color: #e0efff;
-    color: #003366;
+    background-color: var(--mod-table-header-bg);
+    color: var(--mod-table-header-text);
 }
 
 .img-figura {
@@ -93,7 +93,7 @@ th {
 footer {
     text-align: center; 
     padding: 15px;
-    background: linear-gradient(to right, #003366, #3399ff);
+    background: linear-gradient(to right, var(--mod-header-start), var(--mod-header-end));
     color: white;
     margin-top: 40px;
 }

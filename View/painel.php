@@ -37,7 +37,8 @@ $procurar = Usuario::buscar($termo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatSense - PAINEL ADM</title>
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <style>
         #erro_accExiste{
             position: fixed;
@@ -146,6 +147,7 @@ $procurar = Usuario::buscar($termo);
     </style>
 </head>
 <body class="container mt-4">
+<?php $themeToggleClass = 'theme-toggle--fixed'; include __DIR__ . '/partials/theme-toggle.php'; ?>
 <?php
 // Mensagem de erro
 if (isset($_SESSION['erro_accExiste'])) {
@@ -235,5 +237,6 @@ if (isset($_SESSION['erro_accExiste'])) {
     <script src="../bootstrap/js/painel.js"></script>
     <script src="../bootstrap/js/alert.js"></script>
     <script src="../bootstrap/js/WindowConfirm.js"></script>
+    <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 </body>
 </html>
