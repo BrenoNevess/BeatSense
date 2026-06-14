@@ -145,5 +145,6 @@ include('../Controller/protect.php');
             <p class="items">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
         </div>
     </footer>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

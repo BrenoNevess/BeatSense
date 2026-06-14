@@ -161,5 +161,6 @@ session_start();
             </div>
         </div>
         <script src="../bootstrap/js/alert.js"></script>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

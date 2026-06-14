@@ -139,5 +139,6 @@ include('../Controller/protect.php');
       infos.classList.toggle("ativo");
     }
   </script>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

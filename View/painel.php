@@ -235,5 +235,6 @@ if (isset($_SESSION['erro_accExiste'])) {
     <script src="../bootstrap/js/painel.js"></script>
     <script src="../bootstrap/js/alert.js"></script>
     <script src="../bootstrap/js/WindowConfirm.js"></script>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

@@ -128,5 +128,6 @@ include('../Controller/protect.php');
       }
     </script>
     
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

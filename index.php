@@ -390,5 +390,6 @@ include('Model/conexao.php');
     </footer>
     <script src="bootstrap/js/alert.js"></script>
     <script src="bootstrap/js/WindowConfirm.js"></script>
+<?php include('includes/accessibility-widget.php'); ?>
 </body> 
 </html>

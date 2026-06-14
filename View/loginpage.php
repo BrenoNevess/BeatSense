@@ -114,5 +114,6 @@ include('../Controller/login.php');
             </form>                               
         </div> 
         <script src="../bootstrap/js/alert.js"></script>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>
