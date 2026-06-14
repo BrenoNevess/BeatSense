@@ -396,5 +396,6 @@ include('Model/conexao.php');
     <script src="bootstrap/js/alert.js"></script>
     <script src="bootstrap/js/WindowConfirm.js"></script>
     <?php include __DIR__ . '/View/partials/theme-scripts.php'; ?>
+<?php include('includes/accessibility-widget.php'); ?>
 </body> 
 </html>

@@ -119,5 +119,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         </div> 
         <script src="../bootstrap/js/alert.js"></script>
         <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

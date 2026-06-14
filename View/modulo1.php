@@ -147,5 +147,6 @@ include('../Controller/protect.php');
         </div>
     </footer>
     <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

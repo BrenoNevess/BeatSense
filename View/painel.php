@@ -238,5 +238,6 @@ if (isset($_SESSION['erro_accExiste'])) {
     <script src="../bootstrap/js/alert.js"></script>
     <script src="../bootstrap/js/WindowConfirm.js"></script>
     <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>
