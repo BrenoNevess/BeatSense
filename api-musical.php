@@ -32,22 +32,25 @@ if(isset($_GET['artista']) && !empty($_GET['artista'])){
 
 <title>Explorador Musical - BeatSense</title>
 
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<?php $themeBase = ''; include __DIR__ . '/View/partials/theme-head.php'; ?>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <style>
 
 body{
-    background-color: #121212;
-    color: white;
+    background-color: var(--bs-bg-page);
+    color: var(--bs-text-primary);
     font-family: Arial;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container-box{
-    background: #1f1f1f;
+    background: var(--bs-surface);
     padding: 30px;
     border-radius: 15px;
     margin-top: 40px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 15px var(--bs-shadow-color);
+    transition: background-color 0.3s ease;
 }
 
 img{
@@ -58,6 +61,8 @@ img{
 
 </head>
 <body>
+
+<?php $themeToggleClass = 'theme-toggle--fixed'; include __DIR__ . '/View/partials/theme-toggle.php'; ?>
 
 <div class="container">
 
@@ -153,5 +158,6 @@ img{
 
 </div>
 
+<?php include __DIR__ . '/View/partials/theme-scripts.php'; ?>
 </body>
 </html>

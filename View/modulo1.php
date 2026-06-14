@@ -8,6 +8,7 @@ include('../Controller/protect.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BeatSense - Módulo 1</title>
+  <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
   <link rel="stylesheet" href="../styles/modulo1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -34,6 +35,7 @@ include('../Controller/protect.php');
 </head>
 <body class="modulo-azul">
   <header class="topo">
+    <?php $themeToggleClass = 'theme-toggle--header'; include __DIR__ . '/partials/theme-toggle.php'; ?>
     <h1>Módulo 1 - Fundamentos da Música</h1>
     <p>Aprenda o básico sobre música, ritmo, sons e figuras musicais!</p>
   </header>
@@ -144,5 +146,6 @@ include('../Controller/protect.php');
             <p class="items">&copy; 2025 BeatSense. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 </body>
 </html>

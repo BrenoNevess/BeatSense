@@ -12,6 +12,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
     <link rel="stylesheet" href="../styles/login.css">
     <title>BeatSense - Login</title>
     <style>
@@ -66,6 +67,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 <body>
     <div class="container">
         <a class="titulo" href="../index.php"><h1>BeatSense</h1></a>
+        <?php $themeToggleClass = 'theme-toggle--auth'; include __DIR__ . '/partials/theme-toggle.php'; ?>
     </div>
 
     <?php if (isset($_SESSION['mensagem_erro'])): ?>
@@ -116,5 +118,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
             </form>                               
         </div> 
         <script src="../bootstrap/js/alert.js"></script>
+        <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 </body>
 </html>
