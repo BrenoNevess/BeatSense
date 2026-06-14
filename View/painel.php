@@ -37,7 +37,8 @@ $procurar = Usuario::buscar($termo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatSense - PAINEL ADM</title>
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <style>
         #erro_accExiste{
             position: fixed;
@@ -146,6 +147,7 @@ $procurar = Usuario::buscar($termo);
     </style>
 </head>
 <body class="container mt-4">
+<?php $themeToggleClass = 'theme-toggle--fixed'; include __DIR__ . '/partials/theme-toggle.php'; ?>
 <?php
 // Mensagem de erro
 if (isset($_SESSION['erro_accExiste'])) {
@@ -200,7 +202,7 @@ if (isset($_SESSION['erro_accExiste'])) {
 
     <form method="GET" class="mb-3" id="search">
         <label for="search-user">Pesquisar Usuário:</label>
-        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= htmlspecialchars($termo) ?>">
+        <input type="text" name="pesquisar" id="search-user" class="form-control" value="<?= htmlspecialchars($termo ?? '') ?>">
     </form>
 
     
@@ -216,11 +218,11 @@ if (isset($_SESSION['erro_accExiste'])) {
         <tbody>
             <?php foreach ($procurar as $row) : ?>
                 <tr>
-                    <td><?= $row["id"] ?></td>
-                    <td><?= $row["nome"] ?></td>
-                    <td><?= $row["email"] ?></td>
+                    <td><?= htmlspecialchars($row["id"]) ?></td>
+                    <td><?= htmlspecialchars($row["nome"]) ?></td>
+                    <td><?= htmlspecialchars($row["email"]) ?></td>
                     <td>
-                        <button class="btn btn-warning btn-sm editar" data-id="<?= $row["id"] ?>" data-nome="<?= $row["nome"] ?>" data-email="<?= $row["email"] ?>">Editar</button>
+                        <button class="btn btn-warning btn-sm editar" data-id="<?= htmlspecialchars($row["id"]) ?>" data-nome="<?= htmlspecialchars($row["nome"]) ?>" data-email="<?= htmlspecialchars($row["email"]) ?>">Editar</button>
                         <form method="POST" style="display:inline;">
                             <input type="hidden" name="excluir_id" value="<?= $row['id'] ?>">
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
@@ -235,6 +237,7 @@ if (isset($_SESSION['erro_accExiste'])) {
     <script src="../bootstrap/js/painel.js"></script>
     <script src="../bootstrap/js/alert.js"></script>
     <script src="../bootstrap/js/WindowConfirm.js"></script>
+    <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 <?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

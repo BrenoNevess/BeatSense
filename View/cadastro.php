@@ -9,6 +9,7 @@ session_start();
     <meta name="author" content="Breno Neves Nascimento">
     <meta name="description" content="Cadastrar seu e-mail no site">
     <meta name="keywords" content="cadastro, entrar, iniciar sessão">
+    <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
     <link rel="stylesheet" type="text/css" href="../styles/cadastro.css">
     <title>Cadastrar-se no BeatSense</title>
     <style>
@@ -84,6 +85,7 @@ session_start();
 <body> 
     <div class="container">
         <a class="titulo" href="../index.php"><h1>BeatSense</h1></a>
+        <?php $themeToggleClass = 'theme-toggle--auth'; include __DIR__ . '/partials/theme-toggle.php'; ?>
     </div>
 
     <?php if (isset($_SESSION['erro_senha'])): ?>
@@ -161,6 +163,7 @@ session_start();
             </div>
         </div>
         <script src="../bootstrap/js/alert.js"></script>
+        <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 <?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

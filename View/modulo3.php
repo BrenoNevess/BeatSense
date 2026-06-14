@@ -8,10 +8,10 @@ include('../Controller/protect.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeatSense - Módulo 3</title>
+  <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
   <link rel="stylesheet" href="../styles/modulo3.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     @media(max-width:480px){
@@ -39,6 +39,7 @@ include('../Controller/protect.php');
 </head>
 <body class="modulo-laranja">
   <header class="topo">
+    <?php $themeToggleClass = 'theme-toggle--header'; include __DIR__ . '/partials/theme-toggle.php'; ?>
     <h1>Módulo 3 - Intervalos, Melodia e Harmonia</h1>
     <p>Entenda os sinais de alteração, intervalos musicais e também sobre a melodia e harmonia!</p>
   </header>
@@ -139,6 +140,7 @@ include('../Controller/protect.php');
       infos.classList.toggle("ativo");
     }
   </script>
+  <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
 <?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

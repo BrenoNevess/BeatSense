@@ -12,8 +12,9 @@ include('Model/conexao.php');
     <meta name="description" content="BeatSense é um site voltado para ensinar a teoria musical, com ele o músico aprenderá os os fundamentos musicais">
     <meta name="keywords" content="BeatSense, teoria musical, música, ritmo, figuras musicais, som, timbre, altura, intensidade, duração, aprendizado musical, educação musical, leitura musical, notas musicais, pausas musicais, fundamentos da música, ensino de música, conteúdo musical interativo, site educativo, acessibilidade na música, música para iniciantes, teoria musical para iniciantes, Congregação Cristã no Brasil, música CCB, jovens músicos, leitura de partituras, símbolos musicais, curso de teoria musical gratuito">
     <title>BeatSense - Ensino de Música</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <?php $themeBase = ''; include __DIR__ . '/View/partials/theme-head.php'; ?>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
     <style>
         @font-face {
             font-family: 'Quantum';
@@ -23,7 +24,7 @@ include('Model/conexao.php');
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: var(--bs-bg-page);
         }
 
         .hero-section {
@@ -251,6 +252,7 @@ include('Model/conexao.php');
                     <li class="nav-item"><a class="nav-link text-light" href="#teoria">Teoria Musical</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="https://www.linkedin.com/in/breno-neves-2b30a5360/">Contato</a></li>
+                    <li class="nav-item"><a href="api-musical.php" class="btn btn-warning">Explorador Musical</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" id="OpenL" onclick="OpenLogout()">Encerrar Sessão</a></li>
                         <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
@@ -261,6 +263,9 @@ include('Model/conexao.php');
                     <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'):?>
                     <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="View/painel.php">Painel ADM</a></li>
                     <?php endif;?>
+                    <li class="nav-item mt-2 mt-lg-0 d-flex align-items-center">
+                        <?php $themeToggleClass = 'theme-toggle--navbar'; include __DIR__ . '/View/partials/theme-toggle.php'; ?>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -390,6 +395,7 @@ include('Model/conexao.php');
     </footer>
     <script src="bootstrap/js/alert.js"></script>
     <script src="bootstrap/js/WindowConfirm.js"></script>
+    <?php include __DIR__ . '/View/partials/theme-scripts.php'; ?>
 <?php include('includes/accessibility-widget.php'); ?>
 </body> 
 </html>
