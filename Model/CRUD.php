@@ -3,7 +3,7 @@ include('conexao.php');
 
 class Usuario {
 
-    public static function adicionarUsuario($dados) {
+    public static function adicionarUsuario(array $dados) {
         $db = Conexao::GetConexao();
 
         $nome = $dados["nome"];
@@ -26,7 +26,7 @@ class Usuario {
         return false;
     }
 
-    public static function atualizarUsuario($dados) {
+    public static function atualizarUsuario(array $dados) {
         $db = Conexao::GetConexao();
 
         $id = $dados["id"];
@@ -49,9 +49,10 @@ class Usuario {
         return false;
     }
 
-    public static function deletarUsuario($id) {
+    public static function deletarUsuario(array $dados) {
         $db = Conexao::GetConexao();
 
+        $id = $dados["id"];
         $stmt = $db->prepare("DELETE FROM usuarios WHERE id = ?");
         if ($stmt->execute([$id])) {
             $_SESSION['message-delete'] = 'Usuário deletado com sucesso!';
