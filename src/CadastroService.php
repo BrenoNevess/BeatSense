@@ -1,7 +1,12 @@
 <?php
 
-function cadastrarUsuario($nome, $email, $senha, $senha_confirmar)
+function cadastrarUsuario(array $dados)
 {
+    $nome = $dados['nome'];
+    $email = $dados['email'];
+    $senha = $dados['senha'];
+    $senha_confirmar = $dados['senha_confirmar'];
+
     if (!$nome || !$email || !$senha || !$senha_confirmar) {
         return ['status' => false, 'erro' => 'Campos obrigatórios não podem estar vazios.'];
     }

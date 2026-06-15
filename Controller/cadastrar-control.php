@@ -10,7 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'] ?? null;
     $senha_confirmar = $_POST['senha_confirmar'] ?? null;
 
-    $resultado = cadastrarUsuario($nome, $email, $senha, $senha_confirmar);
+    $resultado = cadastrarUsuario([
+        'nome' => $nome,
+        'email' => $email,
+        'senha' => $senha,
+        'senha_confirmar' => $senha_confirmar
+    ]);
 
     if ($resultado['status']) {
         $_SESSION['mensagem_sucesso'] = 'Usuário cadastrado com sucesso!';

@@ -295,7 +295,7 @@ include('Model/conexao.php');
     <div class="container mt-5 text-center" id="sobre">
         <h2 class="mb-3">Sobre o BeatSense</h2>
         <p class="lead">O <strong>BeatSense</strong> é um site dedicado ao ensino de teoria musical de forma acessível e prática. 
-        Criado para auxiliar músicos iniciantes e membros da Congregação Cristã no Brasil, 
+        Criado para auxiliar músicos iniciantes e entusiastas da música, o BeatSense oferece uma abordagem clara e interativa para aprender os fundamentos da música.
         oferecendo materiais educativos que simplificam o aprendizado e ajudam você a desenvolver seus conhecimentos musicais.</p>
     </div>
 
