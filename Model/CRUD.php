@@ -3,7 +3,7 @@ include('conexao.php');
 
 class Usuario {
 
-    public static function adicionarUsuario($dados) {
+    public static function adicionarUsuario(array $dados) {
         $db = Conexao::GetConexao();
 
         $nome = $dados["nome"];
@@ -26,25 +26,33 @@ class Usuario {
         return false;
     }
 
-    public static function atualizarUsuario($dados) {
+    public static function atualizarUsuario(array $dados) {
         $db = Conexao::GetConexao();
 
         $id = $dados["id"];
         $nome = $dados["nome"];
         $email = $dados["email"];
-        $senhaHash = password_hash($dados["senha"], PASSWORD_DEFAULT);
 
-        $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
-        if ($stmt->execute([$nome, $email, $senhaHash, $id])) {
+        if (!empty($dados["senha"])) {
+            $senhaHash = password_hash($dados["senha"], PASSWORD_DEFAULT);
+            $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
+            $ok = $stmt->execute([$nome, $email, $senhaHash, $id]);
+        } else {
+            $stmt = $db->prepare("UPDATE usuarios SET nome = ?, email = ? WHERE id = ?");
+            $ok = $stmt->execute([$nome, $email, $id]);
+        }
+
+        if ($ok) {
             $_SESSION['message-update'] = 'Usuário atualizado com sucesso!';
             return true;
         }
         return false;
     }
 
-    public static function deletarUsuario($id) {
+    public static function deletarUsuario(array $dados) {
         $db = Conexao::GetConexao();
 
+        $id = $dados["id"];
         $stmt = $db->prepare("DELETE FROM usuarios WHERE id = ?");
         if ($stmt->execute([$id])) {
             $_SESSION['message-delete'] = 'Usuário deletado com sucesso!';

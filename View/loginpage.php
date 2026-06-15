@@ -1,5 +1,7 @@
-<?php 
-include('../Controller/login.php');
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,6 +12,7 @@ include('../Controller/login.php');
     <!--Completar dps-->
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <?php $themeBase = '../'; include __DIR__ . '/partials/theme-head.php'; ?>
     <link rel="stylesheet" href="../styles/login.css">
     <title>BeatSense - Login</title>
     <style>
@@ -64,6 +67,7 @@ include('../Controller/login.php');
 <body>
     <div class="container">
         <a class="titulo" href="../index.php"><h1>BeatSense</h1></a>
+        <?php $themeToggleClass = 'theme-toggle--auth'; include __DIR__ . '/partials/theme-toggle.php'; ?>
     </div>
 
     <?php if (isset($_SESSION['mensagem_erro'])): ?>
@@ -114,5 +118,7 @@ include('../Controller/login.php');
             </form>                               
         </div> 
         <script src="../bootstrap/js/alert.js"></script>
+        <?php include __DIR__ . '/partials/theme-scripts.php'; ?>
+<?php include('../includes/accessibility-widget.php'); ?>
 </body>
 </html>

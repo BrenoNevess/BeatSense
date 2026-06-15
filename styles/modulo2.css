@@ -7,12 +7,13 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background-color: #f4fff5;
-    color: #1e3d2f;
+    background-color: var(--mod-bg);
+    color: var(--mod-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .topo {
-    background: linear-gradient(to right, #003300, #33cc66);
+    background: linear-gradient(to right, var(--mod-header-start), var(--mod-header-end));
     color: white;
     padding: 40px 20px;
     text-align: center;  
@@ -27,8 +28,8 @@ body {
 }
 
 .card {
-    background-color: #ffffff;
-    border-left: 6px solid #2ecc71;
+    background-color: var(--mod-card-bg);
+    border-left: 6px solid var(--mod-card-border);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -42,7 +43,7 @@ body {
 }
 
 .card h2 {
-    color: #27ae60;
+    color: var(--mod-card-title, #27ae60);
 }
 
 ul {
@@ -52,7 +53,7 @@ ul {
 footer {
     text-align: center; 
     padding: 15px;
-    background: linear-gradient(to right, #003300, #33cc66);
+    background: linear-gradient(to right, var(--mod-header-start), var(--mod-header-end));
     color: white;
     margin-top: 40px;
 }
