@@ -27,7 +27,6 @@ A cada alteração no código:
 
 - **Login do Administrador:**
 - **Email:** brenoadm@gmail.com
-- **Senha:** Neves7
 - **CRUD de Usuários:** O administrador pode adicionar, editar e excluir usuários cadastrados.
 
 ## Tecnologias Utilizadas
