@@ -255,7 +255,24 @@ include('Model/conexao.php');
                     <li class="nav-item"><a href="api-musical.php" class="btn btn-warning">Explorador Musical</a></li>
                     <?php if(isset($_SESSION['user_type'])):?>
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" id="OpenL" onclick="OpenLogout()">Encerrar Sessão</a></li>
-                        <li class="nav-item mt-2 mt-lg-0"><a id="excluir-conta" class="btn btn-primary text-light w-100" onclick="OpenConfirm()">Excluir Conta</a></li>
+                        <?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] != 'adm'): ?>
+                        <li class="nav-item dropdown mt-2 mt-lg-0">
+                            <button class="btn btn-secondary dropdown-toggle"
+                                    data-bs-toggle="dropdown">
+                                ⚙ Configurações
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item text-danger"
+                                    href="#"
+                                    onclick="OpenConfirm()">
+                                    Excluir minha conta
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <?php endif; ?>
                     <?php else: ?>
                         <li class="nav-item mt-2 mt-lg-0"><a id="sessao" class="btn btn-primary text-light w-100" href="View/loginpage.php">Iniciar Sessão</a></li>
                     <?php endif; ?>
