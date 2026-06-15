@@ -9,7 +9,7 @@ function CloseConfirm() {
 }
 
 function ConfirmConfirm(){
-   window.location.href = 'http://localhost/BeatSense/Model/ExcludeAcc.php';
+   window.location.href = '../../Model/ExcludeAcc.php';
 }
 
 // -------------------------------------------------------------------------
@@ -25,5 +25,5 @@ function CloseLogout() {
 }
 
 function ConfirmLogout(){
-   window.location.href = 'http://localhost/BeatSense/Controller/logout.php';
+   window.location.href = '../../Controller/logout.php';
 }
